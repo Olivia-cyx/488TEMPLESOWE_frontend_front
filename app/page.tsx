@@ -1,10 +1,14 @@
-import Navbar from '../components/Navbar';
-// import { About, Explore, Feedback, GetStarted, Hero, Insights, WhatsNew, World } from '../sections';
+import Navbar from "../components/Navbar";
+import { LandingPage } from "../sections/landingPage";
 
-const Page = () => (
- < div className="bg-primary-yellow overflow-hidden">
-    <Navbar />
-  </div>
+
+const Page: React.FC = () => (
+  <>
+    <div className="bg-primary-yellow overflow-hidden">
+      <Navbar />
+    </div>
+    <LandingPage />
+  </>
 );
 
 export default Page;
