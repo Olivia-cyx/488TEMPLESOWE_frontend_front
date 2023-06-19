@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Eudoxus Sans", sans-serif;
+  scroll-behavior: smooth;
+}
+
+.verticalLineAfter {
+    position: relative;
+  }
+  
+.verticalLineAfter::after {
+    content: '';
+    position: absolute;
+    left: 90px; /* Change this to position the line */
+    top: 0;
+    bottom: 0;
+    width: 2px; /* This controls the thickness of the line */
+    background: white; /* Change color according to your needs */
+  }
+.underline {
+    text-decoration: underline;
+}
+
+.active {
+    border-bottom: 2px solid #000; /* Change color as needed */
+}
+
+
+
