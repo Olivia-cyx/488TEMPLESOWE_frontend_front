@@ -24,24 +24,30 @@ const Navbar = () => {
                     <img src="/favicon.ico" alt="logo" className="w-[40px] h-[40px] object-center" />
                 </div>
                 <h2 
-                    className={`Freight Big Pro text-[14px]  pt-2 ${active === "ABOUT" ? "underline" : ""}`} 
+                    className={`Freight Big Pro text-[14px]  pt-2 cursor-pointer hover:underline ${active === "ABOUT" ? "underline" : ""}  ${active === "ABOUT" ? "underline" : ""} ${active === "ABOUT" ? "underline" : ""}`} 
                     style={{ color: '#DCD5C6' }} 
                     onClick={() => handleItemClick("ABOUT")}
                 >
                     ABOUT
                 </h2>
-                <h2 className={`Freight Big Pro text-[14px]  pt-2 ${active === "LIFESTYLE" ? "underline" : ""}`} style={{ color: '#DCD5C6' }}  onClick={() => handleItemClick("LIFESTYLE")}>
+                <h2 className={`Freight Big Pro text-[14px]  pt-2 cursor-pointer hover:underline ${active === "ABOUT" ? "underline" : ""} ${active === "LIFESTYLE" ? "underline" : ""}`}
+                    style={{ color: '#DCD5C6' }}
+                    onClick={() => handleItemClick("LIFESTYLE")}>
                     LIFESTYLE
                 </h2>
-                <h2 className={`Freight Big Pro text-[14px]  pt-2 ${active === "GALLERY" ? "underline" : ""}`} style={{ color: '#DCD5C6' }} onClick={() => handleItemClick("GALLERY")}>
+                <h2 className={`Freight Big Pro text-[14px]  pt-2 cursor-pointer hover:underline ${active === "ABOUT" ? "underline" : ""} ${active === "GALLERY" ? "underline" : ""}`}
+                    style={{ color: '#DCD5C6' }}
+                    onClick={() => handleItemClick("GALLERY")}>
                     GALLERY
                 </h2>
-                <h2 className={`Freight Big Pro text-[14px]  pt-2 ${active === "TEAM" ? "underline" : ""}`} style={{ color: '#DCD5C6' }}  onClick={() => handleItemClick("TEAM")}>
+                <h2 className={`Freight Big Pro text-[14px]  pt-2 cursor-pointer hover:underline ${active === "ABOUT" ? "underline" : ""} ${active === "TEAM" ? "underline" : ""}`}
+                    style={{ color: '#DCD5C6' }}
+                    onClick={() => handleItemClick("TEAM")}>
                     TEAM
                 </h2>
                 <div className="flex items-center">
 
-                    <button  style={{ backgroundColor: '#DCD5C6' }} className=" py-2 px-4 rounded">
+                <button  className="bg-[#DCD5C6] hover:bg-hover-gray transition-colors duration-500 ease-in py-2 px-4 rounded">
                     <h2 
                         className={`Freight Big Pro text-[14px]`} 
                         style={{ color: '#544E48' }}   
