@@ -1,6 +1,15 @@
+"use client"
 import React from 'react';
+import styles from '../styles';
+import { motion } from 'framer-motion';
+import Navbar from '../components/Navbar';
 
-export function LandingPage() {
+export default function LandingPage() {
   return (
-    <><div>sss</div><div>sss</div></>)
+    <section className={`coverPage  ${styles.height1000} relative z-10`}>
+      <Navbar/>
+    <div >
+    </div>
+  </section>)
+   
 }
