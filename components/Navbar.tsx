@@ -18,14 +18,14 @@ export default function Navbar() {
       initial="hidden"
       whileInView="show"
       className={`${styles.xPaddings} py-4 relative bg-primary-yellow`}
-      style={{ height: '80px',  boxShadow: '0px 20px 20px 0px rgba(0, 0, 0, 0.4)' } }
+      style={{ height: '80px',  boxShadow: '0px 20px 20px 0px rgba(0, 0, 0, 0.)' } }
     >
       <div className={`${styles.innerWidth} flex justify-between gap-4`}>
         <div className="verticalLineAfter">
           <img src="/favicon.ico" alt="logo" className="w-[60px] h-[60px] object-center" />
         </div>
         <h2
-          className={`Freight Big Pro text-[21px]  pt-3 cursor-pointer hover:underline ${
+          className={`Freight Big Pro text-[21px]  pt-4 cursor-pointer hover:underline ${
             active === 'ABOUT' ? 'underline' : ''
           }`}
           style={{ color: '#DCD5C6' , fontWeight: 'lighter'}}
@@ -34,7 +34,7 @@ export default function Navbar() {
           ABOUT
         </h2>
         <h2
-          className={`Freight Big Pro text-[21px]  pt-3 cursor-pointer hover:underline ${
+          className={`Freight Big Pro text-[21px]  pt-4 cursor-pointer hover:underline ${
             active === 'LIFESTYLE' ? 'underline' : ''
           }`}
           style={{ color: '#DCD5C6', fontWeight: 'lighter'}}
@@ -43,7 +43,7 @@ export default function Navbar() {
           LIFESTYLE
         </h2>
         <h2
-          className={`Freight Big Pro text-[21px]  pt-3 cursor-pointer hover:underline ${
+          className={`Freight Big Pro text-[21px]  pt-4 cursor-pointer hover:underline ${
             active === 'GALLERY' ? 'underline' : ''
           }`}
           style={{ color: '#DCD5C6', fontWeight: 'lighter' }}
@@ -52,7 +52,7 @@ export default function Navbar() {
           GALLERY
         </h2>
         <h2
-          className={`Freight Big Pro text-[21px]  pt-3 cursor-pointer hover:underline ${
+          className={`Freight Big Pro text-[21px]  pt-4 cursor-pointer hover:underline ${
             active === 'TEAM' ? 'underline' : ''
           }`}
           style={{ color: '#DCD5C6' ,fontWeight: 'lighter'}}
