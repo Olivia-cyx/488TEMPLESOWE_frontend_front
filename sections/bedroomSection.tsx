@@ -80,7 +80,7 @@ export default function BedroomSection() {
               variants={fadeIn("up", "tween", 0.05, 0.25)}
               className="mt-[8px] freightBigPro sm:text-[21px] text-[18px] text-center text-secondary-white"
             >
-              Bedrooms designed as havens of relaxation, equipped with modern conveniences for your ultimate comfort
+              Stunning appointments, harmonious mood lighting, and spacious design create captivating spaces.
             </motion.p>
           </div>
         </motion.div>

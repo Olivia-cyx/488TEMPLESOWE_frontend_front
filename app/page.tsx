@@ -3,6 +3,7 @@ import LandingPage from "../sections/landingSection"
 import AboutPage from "../sections/aboutSection"
 import styles from "../styles"
 import BedroomSection from "../sections/bedroomSection"
+import KitchenSection from "../sections/kitchenSection"
 
 const Page: React.FC = () => (
   <>
@@ -18,6 +19,9 @@ const Page: React.FC = () => (
     <div className={`bg-primary-yellow overflow-hidden ${styles.height3113}`}>
       <AboutPage />
       <BedroomSection />
+    </div>
+    <div className={`bg-secondary-white overflow-hidden ${styles.height3256}`}>
+      <KitchenSection />
     </div>
   </>
 )

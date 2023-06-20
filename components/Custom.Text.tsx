@@ -17,3 +17,13 @@ export const TypingText: React.FC<TypingTextProps> = ({ title, textStyles = "" }
     ))}
   </motion.p>
 )
+
+export const TypingBrownText: React.FC<TypingTextProps> = ({ title, textStyles = "" }) => (
+  <motion.p variants={textContainer} className={`font-normal text-[24px] text-primary-yellow ${textStyles}`}>
+    {Array.from(title).map((letter, index) => (
+      <motion.span variants={textVariant2} key={index}>
+        {letter === " " ? "\u00A0" : letter}
+      </motion.span>
+    ))}
+  </motion.p>
+)
