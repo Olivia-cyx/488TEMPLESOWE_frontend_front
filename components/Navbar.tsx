@@ -18,7 +18,7 @@ export default function Navbar() {
       initial="hidden"
       whileInView="show"
       className={`${styles.xPaddings} py-4 relative bg-primary-yellow`}
-      style={{ height: '80px',  boxShadow: '0px 20px 20px 0px rgba(0, 0, 0, 0.)' } }
+      style={{ height: '80px', boxShadow: '0px 20px 20px 5px rgba(0, 0, 0, 0.5)' } }
     >
       <div className={`${styles.innerWidth} flex justify-between gap-4`}>
         <div className="verticalLineAfter">

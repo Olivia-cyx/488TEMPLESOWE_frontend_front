@@ -24,6 +24,20 @@
     background: rgb(128, 123, 123); /* Change color according to your needs */
   }
 
+.HorizontalLineAfter {
+    position: relative;
+  }
+  
+.HorizontalLineAfter::after {
+    content: '';
+    position: absolute;
+    top: 100%; /* This will place the line below the parent's content */
+    left: -250px;
+    right:-250px;
+    height: 4px; /* This controls the thickness of the line */
+    background: rgb(128, 123, 123); /* Change color according to your needs */
+  }
+
 .underline {
     text-decoration: underline;
 }
@@ -43,4 +57,8 @@
 
 .drop-shadow-down {
   box-shadow: 0px -20px 5px 5px rgba(0, 0, 0, 0.20);
+}
+
+.freightBigPro {
+  font-family: "Freight Big Pro", serif; 
 }
