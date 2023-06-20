@@ -1,8 +1,8 @@
-import '../styles/globals.css';
-import React, { ReactNode } from 'react';
+import "../styles/globals.css"
+import React, { ReactNode } from "react"
 
 interface RootLayoutProps {
-  children: ReactNode;
+  children: ReactNode
 }
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => (
   <html lang="en">
@@ -12,6 +12,6 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => (
     </head>
     <body>{children}</body>
   </html>
-);
+)
 
-export default RootLayout;
+export default RootLayout

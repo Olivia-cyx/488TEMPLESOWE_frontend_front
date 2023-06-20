@@ -7,13 +7,13 @@ import { fadeIn, staggerContainer } from "../utils/motion"
 
 export default function AboutPage() {
   return (
-    <section className={`${styles.paddings}flex justify-center items-center flex-col relative z-10`}>
+    <section className={`${styles.paddings}flex justify-center items-center flex-col gap-8`}>
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className={`${styles.innerWidth} mx-auto ${styles.flexCenter} flex-col space-y-30`}
+        className={"flex justify-center items-center flex-col relative z-10 space-y-30"}
       >
         <div className="HorizontalLineAfter">
           <img src="Titlepage logo.png" alt=" logo" className="w-[248px] h-[250px] object-centre mb-10" />
