@@ -7,8 +7,6 @@ import { slideIn, textVariant } from '../utils/motion';
 
 export default function LandingPage() {
   return (
-    <section className={`coverPage  ${styles.height1000} relative z-10`}>
-      <Navbar/>
       <motion.div className= "flex justify-center items-center flex-col relative z-10">
         <img src="Titlepage logo.png" alt="logo" className="w-[700px] h-[700px] object-centre" />
         <div className="py-20 flex items-center">
@@ -18,7 +16,6 @@ export default function LandingPage() {
             </h2>
           </button>
         </div>  
-    </motion.div>
-  </section>)
+    </motion.div>)
    
 }

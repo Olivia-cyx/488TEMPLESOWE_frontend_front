@@ -36,15 +36,16 @@ export const navVariants = {
     },
   });
   
-  export const staggerContainer = (staggerChildren:any, delayChildren:any) => ({
-    hidden: {},
+  export const staggerContainer = {
+    hidden: { opacity: 0 },
     show: {
+      opacity: 1,
       transition: {
-        staggerChildren,
-        delayChildren,
-      },
-    },
-  });
+        staggerChildren: 0.2,
+        delayChildren: 0.2
+      }
+    }
+  };
   
   export const textVariant = (delay:any) => ({
     hidden: {
