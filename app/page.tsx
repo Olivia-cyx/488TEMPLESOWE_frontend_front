@@ -1,8 +1,8 @@
-import Navbar from "../components/Navbar";
-import LandingPage from "../sections/landingPage";
-import AboutPage from "../sections/aboutPage";
-import styles from "../styles";
-
+import Navbar from "../components/Navbar"
+import LandingPage from "../sections/landingSection"
+import AboutPage from "../sections/aboutSection"
+import styles from "../styles"
+import BedroomSection from "../sections/bedroomSection"
 
 const Page: React.FC = () => (
   <>
@@ -12,14 +12,14 @@ const Page: React.FC = () => (
           <Navbar />
         </div>
         <LandingPage />
-         </div>
       </div>
- 
+    </div>
+
     <div className={`bg-primary-yellow overflow-hidden ${styles.height3113}`}>
       <AboutPage />
+      <BedroomSection />
     </div>
-    
   </>
-);
+)
 
-export default Page;
+export default Page
