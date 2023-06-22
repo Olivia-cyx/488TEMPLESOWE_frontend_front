@@ -7,7 +7,7 @@ import { slideIn, textVariant } from "../utils/motion"
 
 export default function LandingPage() {
   return (
-    <motion.div className="flex justify-center items-center flex-col relative z-10">
+    <motion.div className="flex justify-center items-center flex-col">
       <img src="Titlepage logo.png" alt="logo" className="w-[700px] h-[700px] object-centre" />
       <div className="py-20 flex items-center">
         <button className="bg-[#DCD5C6] hover:bg-hover-gray transition-colors duration-400 ease-in py-4 px-8 rounded-lg">

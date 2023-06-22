@@ -9,7 +9,7 @@ const Page: React.FC = () => (
   <>
     <div className="bg-primary-yellow overflow-hidden">
       <div className={`coverPage  ${styles.height1000} relative z-10`}>
-        <div className="fixed top-0 z-50 w-full">
+        <div className="fixed top-0 z-50 w-full z-40">
           <Navbar />
         </div>
         <LandingPage />

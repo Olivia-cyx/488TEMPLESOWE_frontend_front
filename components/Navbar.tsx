@@ -17,7 +17,7 @@ export default function Navbar() {
       variants={navVariants}
       initial="hidden"
       whileInView="show"
-      className={`${styles.xPaddings} py-4 relative bg-primary-yellow`}
+      className={`${styles.xPaddings} py-4 relative bg-primary-yellow z-40`}
       style={{ height: "80px", boxShadow: "0px 20px 20px 5px rgba(0, 0, 0, 0.5)" }}
     >
       <div className={`${styles.innerWidth} flex justify-between gap-4`}>

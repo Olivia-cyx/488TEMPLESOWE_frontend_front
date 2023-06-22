@@ -8,8 +8,8 @@ import { TypingBrownText, TypingText } from "../components/Custom.Text"
 export default function KitchenSection() {
   return (
     <div>
-      <section className={`${styles.paddings}flex justify-center items-center flex-col relative z-10`}>
-        <div className="flex justify-center items-center relative z-10 space-x-120">
+      <section className={`${styles.paddings}flex justify-center items-center flex-col`}>
+        <div className="flex justify-center items-center space-x-120">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -26,7 +26,7 @@ export default function KitchenSection() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
-            className={"flex justify-center items-center flex-col relative z-10 pt-60 "}
+            className={"flex justify-center items-center flex-col pt-60 "}
           >
             <motion.div variants={planetVariants("right")} className={`flex-1 ${styles.flexCenter}`}>
               <img src="LOGO-Bathroom - Copy.png" alt="LOGO_bedroom" className="w-[142.5px] h-[120.85px] object-contain" />
@@ -47,13 +47,13 @@ export default function KitchenSection() {
             </div>
           </motion.div>
         </div>
-        <div className="flex justify-center items-center relative z-10 space-x-120">
+        <div className="flex justify-center items-center space-x-120">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
-            className={"flex justify-center items-center flex-col relative z-10 pt-60 "}
+            className={"flex justify-center items-center flex-col pt-60 "}
           >
             <motion.div variants={planetVariants("left")} className={`flex-1 ${styles.flexCenter}`}>
               <img src="LOGO_bedroom - Copy.png" alt="LOGO_bedroom" className="w-[142.5px] h-[80.85px] object-contain" />
@@ -85,7 +85,7 @@ export default function KitchenSection() {
             </motion.div>
           </motion.div>
         </div>
-        <div className="flex justify-center items-center relative z-10 space-x-120">
+        <div className="flex justify-center items-center space-x-120">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -102,7 +102,7 @@ export default function KitchenSection() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
-            className={"flex justify-center items-center flex-col relative z-10 pt-60 "}
+            className={"flex justify-center items-center flex-col pt-60 "}
           >
             <motion.div variants={planetVariants("right")} className={`flex-1 ${styles.flexCenter}`}>
               <img src="LOGO-Bathroom - Copy.png" alt="LOGO_bedroom" className="w-[142.5px] h-[120.85px] object-contain" />
