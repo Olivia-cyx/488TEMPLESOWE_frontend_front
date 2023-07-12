@@ -48,7 +48,7 @@ export default function KitchenSection() {
             >
               <div className="relative">
                 <img src="bar_upstairs.png" alt="bedroom" className="w-[950px] h-[677px] object-contain" />
-                <div className="absolute top-0 left-0 flex items-start justify-start w-full h-full">
+                <div className="absolute bottom-10 right-10 flex items-start justify-start w-full h-full">
                   <img src="LUXE_Design.png" alt="bedroom" className="w-[177.76px] h-[238.41px] object-contain" />
                 </div>
               </div>
@@ -66,14 +66,20 @@ export default function KitchenSection() {
             </motion.div>
             <div className="w-[259px] h-[510px] pt-20">
               <TypingBrownText
-                title="Harmonize living and productivity: 
+                title="Harmonize living 
+"
+                textStyles="text-center"
+              />
+
+              <TypingBrownText
+                title="and productivity: 
 "
                 textStyles="text-center"
               />
 
               <motion.p
                 variants={fadeIn("up", "tween", 0.05, 0.25)}
-                className="mt-[8px] freightBigPro sm:text-[21px] text-[18px] text-center text-primary-yellow"
+                className="mt-[8px] freightBigPro sm:text-[21px] text-[18px] text-start text-primary-yellow"
               >
                 Stunning appointments, harmonious mood lighting, and spacious design create captivating spaces.
               </motion.p>
@@ -93,14 +99,15 @@ export default function KitchenSection() {
             </motion.div>
             <div className="w-[259px] h-[510px] pt-20">
               <TypingBrownText
-                title="Embrace the art of effortless hospitality: 
+                title="Embrace the art of
 "
                 textStyles="text-center"
               />
+              <TypingBrownText title="effortless hospitality:" textStyles="text-center" />
 
               <motion.p
                 variants={fadeIn("up", "tween", 0.05, 0.25)}
-                className="mt-[8px] freightBigPro sm:text-[21px] text-[18px] text-center text-primary-yellow"
+                className="mt-[8px] freightBigPro sm:text-[21px] text-[18px] text-start text-primary-yellow"
               >
                 Unite streamlined elegance and practical design to transform your kitchen into a hub for gathering, working, and entertaining.
               </motion.p>
@@ -114,7 +121,7 @@ export default function KitchenSection() {
             className={"flex justify-center items-center pt-10"}
           >
             <motion.div variants={fadeIn("up", "tween", 0.05, 0.25)} className={`flex-1 ${styles.flexCenter}`}>
-              <div className="relative group duration-500">
+              <div className="relative group duration-500 w-[950px] h-[677px] object-contain">
                 <Image src={kitchImageSlide[currentIndex].Url} alt="bedroom" className="w-[950px] h-[677px] object-contain" />
                 <div className="hidden group-hover:block absolute top-[50%] translate-y-[-50%] left-5 text-2xl rounded-full p-2 ">
                   <BsChevronCompactLeft onClick={prevSlide} size={30} />
@@ -157,14 +164,19 @@ export default function KitchenSection() {
             </motion.div>
             <div className="w-[259px] h-[510px] pt-20">
               <TypingBrownText
-                title="Elevate your living experience: 
+                title="Elevate your  
 "
-                textStyles="text-center"
+                textStyles="text-start"
+              />
+              <TypingBrownText
+                title="living experience: 
+"
+                textStyles="text-start"
               />
 
               <motion.p
                 variants={fadeIn("up", "tween", 0.05, 0.25)}
-                className="mt-[8px] freightBigPro sm:text-[21px] text-[18px] text-center text-primary-yellow"
+                className="mt-[8px] freightBigPro sm:text-[21px] text-[18px] text-start text-primary-yellow"
               >
                 Embrace an indoor-outdoor sanctuary, where glass stacker doors seamlessly unite with the living domain.
               </motion.p>

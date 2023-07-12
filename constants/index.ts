@@ -1,5 +1,5 @@
-import Coverpage from "../public/Coverpage.png"
-import Bathroom from "../public/Bathroom image.png"
+import Coverpage from "../public/Mask Group 5.png"
+import Bathroom from "../public/Mask Group 6.png"
 
 export const kitchImageSlide = [
   {
