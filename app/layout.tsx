@@ -1,3 +1,4 @@
+import Header from "../components/Header"
 import "../styles/globals.css"
 import React, { ReactNode } from "react"
 
@@ -10,7 +11,11 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => (
       <link rel="preconnect" href="https://stijndv.com" />
       <link rel="stylesheet" href="https://stijndv.com/fonts/Eudoxus-Sans.css" />
     </head>
-    <body>{children}</body>
+
+    <body>
+      <Header />
+      <main>{children}</main>
+    </body>
   </html>
 )
 
