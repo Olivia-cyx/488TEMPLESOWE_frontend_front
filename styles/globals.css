@@ -66,3 +66,8 @@
 .absolute {
   z-index: 1;
 }
+
+.map-container {
+  height: 100vh;
+  width: 100%;
+}
