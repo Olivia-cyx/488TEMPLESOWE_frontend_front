@@ -49,7 +49,7 @@ const mapStyles = [
 
 export default function Map() {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyB_VyBIDFjrgMwt1aHKK1NGHmZ0PvZZ4dE",
+    googleMapsApiKey: "",
   })
   const center = useMemo(() => ({ lat: -37.756959, lng: 145.11248 }), [])
 
