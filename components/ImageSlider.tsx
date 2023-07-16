@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 "use client"
 
-import { motion } from "framer-motion"
+import { easeIn, motion } from "framer-motion"
 import { IImageSlide } from "../interface/slider"
 import { SetStateAction, useState } from "react"
 import { fadeIn, staggerContainer } from "../utils/motion"
@@ -41,13 +41,8 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ imageSlice, isLifestyle }) =>
       className={"flex justify-center items-center pt-10"}
     >
       <motion.div variants={fadeIn("up", "tween", 0.05, 0.25)} className={`flex-1 ${styles.flexCenter}`}>
-        <div className={`relative group ${isLifestyle ? "w-full" : "w-[950px] h-[677px]"}`}>
-          <Image
-            src={imageSlice[currentIndex].url}
-            alt="bedroom"
-            className={`${isLifestyle ? "w-full h-screen object-cover" : "w-[950px] h-[677px] object-contain"} transition-all duration-500 ease-in-out
-            }`}
-          />
+        <div className={`relative group ${isLifestyle ? "w-full h-screen" : "w-[950px] h-[677px]"}`}>
+          <Image src={imageSlice[currentIndex].url} alt="bedroom" style={{ objectFit: `${isLifestyle ? "cover" : "contain"}` }} fill />
 
           <div
             className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 transition-all duration-500 bg-black/20 text-white cursor-pointer"
