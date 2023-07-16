@@ -1,12 +1,16 @@
 /* eslint-disable max-len */
 "use client"
-
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Navigation, Pagination } from "swiper/modules"
 import styles from "../styles"
 import { motion } from "framer-motion"
 import { fadeIn, planetVariants, staggerContainer } from "../utils/motion"
 import { TypingBrownText, TypingText } from "../components/Custom.Text"
 import { kitchImageSlide } from "../constants/slider"
-import ImageSlider from "../components/ImageSlider"
+import Image from "next/image"
+import "swiper/css"
+import "swiper/css/pagination"
+import "swiper/css/navigation"
 
 export default function KitchenSection() {
   return (
@@ -96,8 +100,25 @@ export default function KitchenSection() {
           </motion.div>
 
           {/* imgae slider */}
-          <ImageSlider imageSlice={kitchImageSlide} isLifestyle={false} />
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.25 }}
+            className={"flex justify-center items-center pt-10"}
+          >
+            <motion.div variants={fadeIn("up", "tween", 0.05, 0.25)} className={`flex-1 ${styles.flexCenter}`}>
+              <Swiper slidesPerView={1} modules={[Pagination, Navigation]} pagination={{ clickable: true }} className="w-[950px] h-[677px] " navigation>
+                {kitchImageSlide.map((imageSlice, index) => (
+                  <SwiperSlide key={index}>
+                    <Image src={imageSlice.url} alt="bedroom" style={{ objectFit: "cover" }} fill />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </motion.div>
+          </motion.div>
         </div>
+
         <div className="flex justify-center items-center space-x-120">
           <motion.div
             variants={staggerContainer}

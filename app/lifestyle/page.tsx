@@ -13,12 +13,10 @@ import "swiper/css/pagination"
 
 const LifeStylePage: React.FC = () => {
   return (
-    <Swiper slidesPerView={1} modules={[Pagination]} pagination={{ clickable: true }}>
+    <Swiper slidesPerView={1} modules={[Pagination]} pagination={{ clickable: true }} className="w-full h-screen">
       {kitchImageSlide.map((imageSlice, index) => (
         <SwiperSlide key={index}>
-          <div className="relative w-full h-screen">
-            <Image src={imageSlice.url} alt="bedroom" style={{ objectFit: "cover" }} fill />
-          </div>
+          <Image src={imageSlice.url} alt="lifestyle" style={{ objectFit: "cover" }} fill />
         </SwiperSlide>
       ))}
     </Swiper>

@@ -71,3 +71,14 @@
   height: 100vh;
   width: 100%;
 }
+
+.swiper-pagination-bullet-active {
+  background-color: #dcd5c6 !important;
+}
+
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after,
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  color: #dcd5c6 !important;
+}
