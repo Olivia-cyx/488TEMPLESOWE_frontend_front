@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-export const content = ["./app/**/*.{html,ts,tsx}", "./components/**/*.{html,ts,tsx}", "./sections/**/*.{html,ts,tsx}", "./styles/**/*.{ts,tsx}"]
-export const mode = "jit"
-export const theme = {
+const content = ["./app/**/*.{html,ts,tsx}", "./components/**/*.{html,ts,tsx}", "./sections/**/*.{html,ts,tsx}", "./styles/**/*.{ts,tsx}"]
+const mode = "jit"
+const theme = {
   extend: {
     colors: {
       "primary-yellow": "#544E48",
@@ -16,4 +16,14 @@ export const theme = {
     },
   },
 }
-export const plugins = []
+
+// eslint-disable-next-line no-undef
+const plugins = []
+
+// eslint-disable-next-line no-undef
+module.exports = {
+  content,
+  mode,
+  theme,
+  plugins,
+}

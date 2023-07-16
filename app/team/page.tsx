@@ -1,3 +1,5 @@
+"use client"
+
 const TeamPage: React.FC = () => (
   <div>
     <h2>team</h2>
