@@ -58,7 +58,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ imageSlice, isLifestyle }) =>
             <BsChevronCompactRight size={30} />
           </div>
 
-          <div className={`flex justify-center py-2 ${isLifestyle ? "absolute top-[90%] right-[50%]" : "top-4"}`}>
+          <div className="flex top-[90%] right-[50%] justify-center py-2 absolute">
             {imageSlice.map((_, slideIndex) => (
               <div key={slideIndex} onClick={() => goToSlide(slideIndex)} className="text-2xl cursor-pointer text-primary-yellow">
                 {currentIndex === slideIndex ? <RxDotFilled /> : <RxDot />}
