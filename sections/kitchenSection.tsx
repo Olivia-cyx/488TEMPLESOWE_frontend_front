@@ -1,34 +1,18 @@
 /* eslint-disable max-len */
 "use client"
-
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Navigation, Pagination } from "swiper/modules"
 import styles from "../styles"
 import { motion } from "framer-motion"
 import { fadeIn, planetVariants, staggerContainer } from "../utils/motion"
 import { TypingBrownText, TypingText } from "../components/Custom.Text"
-import { kitchImageSlide } from "../constants"
+import { kitchImageSlide } from "../constants/slider"
 import Image from "next/image"
-import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs"
-import { RxDot, RxDotFilled } from "react-icons/rx"
-import { SetStateAction, useState } from "react"
+import "swiper/css"
+import "swiper/css/pagination"
+import "swiper/css/navigation"
 
 export default function KitchenSection() {
-  const [currentIndex, setCurrentIndex] = useState(0)
-
-  const prevSlide = () => {
-    const isFirstSlide = currentIndex === 0
-    const newIndex = isFirstSlide ? kitchImageSlide.length - 1 : currentIndex - 1
-    setCurrentIndex(newIndex)
-  }
-  const nextSlide = () => {
-    const isLastSlide = currentIndex === kitchImageSlide.length - 1
-    const newIndex = isLastSlide ? 0 : currentIndex + 1
-    setCurrentIndex(newIndex)
-  }
-
-  const goToSlide = (kitchImageSlideIndex: SetStateAction<number>) => {
-    setCurrentIndex(kitchImageSlideIndex)
-  }
-
   return (
     <div>
       <section className={`${styles.paddings}flex justify-center items-center flex-col`}>
@@ -114,6 +98,8 @@ export default function KitchenSection() {
               </motion.p>
             </div>
           </motion.div>
+
+          {/* imgae slider */}
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -122,25 +108,17 @@ export default function KitchenSection() {
             className={"flex justify-center items-center pt-10"}
           >
             <motion.div variants={fadeIn("up", "tween", 0.05, 0.25)} className={`flex-1 ${styles.flexCenter}`}>
-              <div className="relative group duration-500 w-[950px] h-[677px] object-contain">
-                <Image src={kitchImageSlide[currentIndex].Url} alt="bedroom" className="w-[950px] h-[677px] object-contain transition-all duration-500 " />
-                <div className="hidden group-hover:block absolute top-[50%] translate-y-[-50%] left-5 text-2xl rounded-full p-2 transition-all duration-500 bg-black/20 text-white cursor-pointer">
-                  <BsChevronCompactLeft onClick={prevSlide} size={30} />
-                </div>
-                <div className="hidden group-hover:block absolute top-[50%] translate-y-[-50%] right-5 text-2xl rounded-full p-2 transition-all duration-500  bg-black/20 text-white cursor-pointer">
-                  <BsChevronCompactRight onClick={nextSlide} size={30} />
-                </div>
-                <div className="flex top-4 justify-center py-2">
-                  {kitchImageSlide.map((kitchImageSlide, slideIndex) => (
-                    <div key={slideIndex} onClick={() => goToSlide(slideIndex)} className="text-2xl cursor-pointer text-primary-yellow">
-                      {currentIndex === slideIndex ? <RxDotFilled /> : <RxDot />}
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <Swiper slidesPerView={1} modules={[Pagination, Navigation]} pagination={{ clickable: true }} className="w-[950px] h-[677px] " navigation>
+                {kitchImageSlide.map((imageSlice, index) => (
+                  <SwiperSlide key={index}>
+                    <Image src={imageSlice.url} alt="bedroom" style={{ objectFit: "cover" }} fill />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </motion.div>
           </motion.div>
         </div>
+
         <div className="flex justify-center items-center space-x-120">
           <motion.div
             variants={staggerContainer}
