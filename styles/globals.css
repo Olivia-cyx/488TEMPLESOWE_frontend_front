@@ -82,3 +82,28 @@
 .swiper-rtl .swiper-button-prev:after {
   color: #dcd5c6 !important;
 }
+
+
+h1:before,
+h1:after {
+  content: "";
+  display: inline-block;
+  height: 2px; 
+  width: 600px; 
+  background: #dcd5c6;
+  margin-right: 10px; 
+  vertical-align: middle;
+}
+
+.custom-radio {
+  background-color: transparent;
+  border: 2px solid #DCD5C6;
+}
+
+.custom-radio:checked {
+  background-color: #DCD5C6;
+}
+
+.custom-label {
+  color: #DCD5C6;
+}
