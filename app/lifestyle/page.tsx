@@ -1,25 +1,27 @@
 /* eslint-disable max-len */
 "use client"
 
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Pagination } from "swiper/modules"
-// Import Swiper styles
 import Image from "next/image"
 import { kitchImageSlide } from "../../constants/slider"
+import { motion } from "framer-motion"
+import { staggerContainer } from "../../utils/motion"
 
 import "swiper/css"
 import "swiper/css/pagination"
 
-const LifeStylePage: React.FC = () => {
-  return (
-    <Swiper slidesPerView={1} modules={[Pagination]} pagination={{ clickable: true }} className="w-full h-screen">
-      {kitchImageSlide.map((imageSlice, index) => (
-        <SwiperSlide key={index}>
-          <Image src={imageSlice.url} alt="lifestyle" style={{ objectFit: "cover" }} fill />
-        </SwiperSlide>
-      ))}
-    </Swiper>
-  )
-}
+const LifeStylePage: React.FC = () => (
+  <div className="bg-primary-yellow overflow-hidden h-screen">
+    <motion.div variants={staggerContainer} initial="hidden" whileInView="show" viewport={{ once: false, amount: 1 }}>
+      <Swiper slidesPerView={1} modules={[Pagination]} pagination={{ clickable: true }} className="w-full h-screen">
+        {kitchImageSlide.map((imageSlice, index) => (
+          <SwiperSlide key={index}>
+            <Image src={imageSlice.url} alt="lifestyle" style={{ objectFit: "cover" }} fill />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </motion.div>
+  </div>
+)
 export default LifeStylePage
