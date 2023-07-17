@@ -10,6 +10,13 @@ import emailjs, { EmailJSResponseStatus } from "@emailjs/browser"
 import result from "postcss/lib/result"
 
 export const Footer: React.FC = () => {
+  const serverId = process.env.NEXT_PUBLIC_SERVER_ID
+  const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID
+  const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY
+
+  if (!serverId || !templateId || !publicKey) {
+    throw new Error("Environment variables not set")
+  }
   const [contactPreference, setContactPreference] = useState("email")
   const form = useRef<HTMLFormElement | null>(null)
 
@@ -20,7 +27,7 @@ export const Footer: React.FC = () => {
       return
     }
 
-    emailjs.sendForm("service_aor02cq", "template_ls2cy1c", form.current, "yVK2H00hsAXvJ1BB7").then(
+    emailjs.sendForm(process.env.NEXT_PUBLIC_SERVER_ID!, process.env.NEXT_PUBLIC_TEMPLATE_ID!, form.current, process.env.NEXT_PUBLIC_PUBLIC_KEY!).then(
       (result: EmailJSResponseStatus) => {
         console.log(result.text)
       },
