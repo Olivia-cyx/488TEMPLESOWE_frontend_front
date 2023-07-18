@@ -24,18 +24,18 @@ export default function OutdoorSection() {
             <TypingText
               title="Embrace a vibrant
 "
-              textStyles="text-center"
+              textStyles="text-start"
             />
 
             <TypingText
               title="outdoor lifestyle:
 "
-              textStyles="text-center"
+              textStyles="text-start"
             />
 
             <motion.p
               variants={fadeIn("up", "tween", 0.05, 0.25)}
-              className="mt-[8px] freightBigPro sm:text-[21px] text-[18px] text-center text-secondary-white"
+              className="mt-[8px] freightBigPro sm:text-[21px] text-[18px] text-start text-secondary-white"
             >
               Elevate your leisurely gatherings with a convenient, easy-care option and the option to upgrade to a plumbed outdoor BBQ.
             </motion.p>
@@ -84,18 +84,18 @@ export default function OutdoorSection() {
             <TypingText
               title="Embrace the serenity  
 "
-              textStyles="text-center"
+              textStyles="text-start"
             />
 
             <TypingText
               title="of outdoor living:   
 "
-              textStyles="text-center"
+              textStyles="text-start"
             />
 
             <motion.p
               variants={fadeIn("up", "tween", 0.05, 0.25)}
-              className="mt-[8px] freightBigPro sm:text-[21px] text-[18px] text-center text-secondary-white"
+              className="mt-[8px] freightBigPro sm:text-[21px] text-[18px] text-start text-secondary-white"
             >
               Discover a captivating landscape where nature and design coalesce, offering a private escape for your indulgence.
             </motion.p>
