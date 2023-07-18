@@ -1,4 +1,8 @@
+"use client"
+
 import styles from "../../styles"
+import { motion } from "framer-motion"
+import { staggerContainer } from "../../utils/motion"
 
 type ImageProps = {
   alt: string
@@ -17,7 +21,7 @@ const Image: React.FC<ImageProps> = ({ src, alt, size }) => {
 
 const GalleryPage: React.FC = () => (
   <div className={` bg-primary-yellow overflow-hidden ${styles.height2300}`}>
-    <div className={`teamcoverPage`}>
+    <div className={"teamcoverPage"}>
       <div className="mt-38 pt-20 flex justify-center items-center">
         <img src="/Lifestyle/Titlepage logo.png" alt="logo" className="w-[196px] h-[251px] object-center mb-auto" />
       </div>
