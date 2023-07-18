@@ -19,8 +19,10 @@ const Image: React.FC<ImageProps> = ({ src, alt, size }) => {
 const GalleryPage: React.FC = () => (
   <div className={`bg-primary-yellow overflow-hidden ${styles.height3256}`}>
     <div className="container mx-auto px-5 py-2 lg:px-32 lg:pt-24 mt-40">
-    <Image src="kitchen.png" alt="gallery" size="full" />
       <div className="-m-1 flex flex-wrap md:-m-2">
+        <div>
+          <Image src="Building front_ed.png" alt="gallery" size="full" />
+        </div>
         <div className="flex w-1/2 flex-wrap">
           <Image src="kitchen.png" alt="gallery" size="half" />
           <Image src="Bathroom image.png" alt="gallery" size="half" />
