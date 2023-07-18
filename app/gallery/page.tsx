@@ -1,4 +1,3 @@
-import { images } from "../../constants/gallery"
 import styles from "../../styles"
 
 type ImageProps = {
@@ -17,8 +16,11 @@ const Image: React.FC<ImageProps> = ({ src, alt, size }) => {
 }
 
 const GalleryPage: React.FC = () => (
-  <div className={`bg-primary-yellow overflow-hidden ${styles.height3256}`}>
-    <div className="container mx-auto px-5 py-2 lg:px-32 lg:pt-24 mt-40">
+  <div className={`bg-primary-yellow overflow-hidden ${styles.height2300}`}>
+    <div className="mt-38 pt-20 flex justify-center items-center">
+      <img src="/Lifestyle/Titlepage logo.png" alt="logo" className="w-[196px] h-[251px] object-center mb-auto" />
+    </div>
+    <div className="container mx-auto px-5 py-2 lg:px-32 lg:pt-24 ">
       <div className="-m-1 flex flex-wrap md:-m-2">
         <div>
           <Image src="Building front_ed.png" alt="gallery" size="full" />

@@ -12,6 +12,7 @@ const styles = {
   height3256: "h-[2700px]",
   height4148: "h-[3150px]",
   height1200: "h-[1300px]",
+  height2300: "h-[1800px]",
   h2color: "#DCD5C6",
   backgroundPaddings: "sm:p-20 xs:p-8 px-6 py-12",
 
