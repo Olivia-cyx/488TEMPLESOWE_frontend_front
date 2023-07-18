@@ -82,9 +82,12 @@ export const Footer: React.FC = () => {
               style={{ width: "541px", backgroundColor: "#776D65" }}
             />
             <div className="flex flex-col items-start mt-10">
-              <p className="mt-2" style={{ color: "#DCD5C6" }}>
-                Best Contact Method :
-              </p>
+              <div>
+                <p className="mt-3 pb-3" style={{ color: "#DCD5C6" }}>
+                  Best Contact Method :
+                </p>
+              </div>
+
               <div className="flex items-start">
                 <input
                   id="contact-via-email"

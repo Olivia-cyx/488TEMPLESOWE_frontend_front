@@ -56,12 +56,14 @@
 }
 
 .teamcoverPage {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../public/Building front_ed.png") no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../public/Building front_ed.png") center center;
   background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
   width: 100%;
-  height: 1080px;
+  height:100%;
   background-blend-mode: multiply;
-  opacity: 60%;
+  opacity: 80%;
 }
 .drop-shadow-down {
   box-shadow: 0px -20px 5px 5px rgba(0, 0, 0, 0.2);
