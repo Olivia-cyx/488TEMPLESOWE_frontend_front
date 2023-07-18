@@ -24,12 +24,12 @@ export default function BedroomSection() {
             <TypingText
               title="Indulge in private retreats: 
 "
-              textStyles="text-center"
+              textStyles="text-start"
             />
 
             <motion.p
               variants={fadeIn("up", "tween", 0.05, 0.25)}
-              className="mt-[8px] freightBigPro sm:text-[21px] text-[18px] text-center text-secondary-white"
+              className="mt-[8px] freightBigPro sm:text-[21px] text-[18px] text-start text-secondary-white"
             >
               Bedrooms designed as havens of relaxation, equipped with modern conveniences for your ultimate comfort
             </motion.p>
@@ -71,14 +71,19 @@ export default function BedroomSection() {
           </motion.div>
           <div className="w-[259px] h-[510px] pt-20">
             <TypingText
-              title="Indulge in private retreats: 
+              title="Experience artistry 
 "
-              textStyles="text-center"
+              textStyles="text-start"
+            />
+            <TypingText
+              title="in wet rooms: 
+"
+              textStyles="text-start"
             />
 
             <motion.p
               variants={fadeIn("up", "tween", 0.05, 0.25)}
-              className="mt-[8px] freightBigPro sm:text-[21px] text-[18px] text-center text-secondary-white"
+              className="mt-[8px] freightBigPro sm:text-[21px] text-[18px] text-start text-secondary-white"
             >
               Stunning appointments, harmonious mood lighting, and spacious design create captivating spaces.
             </motion.p>
