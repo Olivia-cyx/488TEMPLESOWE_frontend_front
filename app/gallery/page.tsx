@@ -23,7 +23,7 @@ const GalleryPage: React.FC = () => (
   <div className={` bg-primary-yellow overflow-hidden ${styles.height2300}`}>
     <div className={"teamcoverPage"}>
       <div className="mt-38 pt-20 flex justify-center items-center">
-        <img src="/Lifestyle/Titlepage logo.png" alt="logo" className="w-[196px] h-[251px] object-center mb-auto" />
+        <img src="/Logo/488 gallery.png" alt="logo" className="w-[196px] h-[251px] object-center mb-auto" />
       </div>
       <div className="container mx-auto px-5 py-2 lg:px-32 lg:pt-24 ">
         <div className="-m-1 flex flex-wrap md:-m-2">

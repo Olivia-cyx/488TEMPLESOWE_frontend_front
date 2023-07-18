@@ -5,7 +5,7 @@ const TeamPage: React.FC = () => (
   <div className="bg-primary-yellow overflow-hidden h-screen">
     <motion.div className="teamcoverPage flex justify-center items-center flex-col h-full">
       <div className="pb-70 mt-10">
-        <img src="/Lifestyle/Titlepage logo.png" alt="logo" className="w-[196px] h-[251px] object-center mb-auto" />
+        <img src="/Logo/488 team.png" alt="logo" className="w-[196px] h-[251px] object-center mb-auto" />
       </div>
 
       <div className="flex items-center w-[669px] h-[468px] pt-10 ">
