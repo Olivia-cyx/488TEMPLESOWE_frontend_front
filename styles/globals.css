@@ -117,3 +117,7 @@ h1:after {
 .custom-label {
   color: #DCD5C6;
 }
+
+.custom-placeholder::placeholder {
+  color: #DCD5C6
+}

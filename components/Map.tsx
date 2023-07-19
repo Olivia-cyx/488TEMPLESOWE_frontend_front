@@ -28,7 +28,7 @@ export default function Map() {
     setMapRef(map)
     const bounds = new google.maps.LatLngBounds()
     markers.forEach(({ lat, lng }) => bounds.extend({ lat, lng }))
-    map.fitBounds(bounds)
+    map.setCenter(defaultCenter)
   }, [])
 
   const handleMarkerClick = (id: number, lat: number, lng: number, address: string) => {
@@ -51,18 +51,22 @@ export default function Map() {
             id="map"
             mapContainerClassName="map-container"
             center={defaultCenter}
-            zoom={15}
+            zoom={16}
             onLoad={onMapLoad}
             onClick={() => setIsOpen(false)}
-            options={{ styles: mapStyles }}
+            options={{
+              styles: mapStyles,
+              minZoom: 15.5, // the furthest the user can zoom out
+              maxZoom: 20,
+            }}
           >
-            {markers.map(({ address, lat, lng, icon = "http://maps.google.com/mapfiles/ms/icons/red-dot.png" }, ind) => (
+            {markers.map(({ address, lat, lng, icon = "http://maps.google.com/mapfiles/ms/icons/red-dot.png", iconSize = { width: 40, height: 60 } }, ind) => (
               <Marker
                 key={ind}
                 position={{ lat, lng }}
                 icon={{
                   url: icon,
-                  scaledSize: new window.google.maps.Size(50, 50),
+                  scaledSize: new window.google.maps.Size(iconSize.width, iconSize.height),
                   origin: new window.google.maps.Point(0, 0),
                   anchor: new window.google.maps.Point(0, 0),
                 }}
