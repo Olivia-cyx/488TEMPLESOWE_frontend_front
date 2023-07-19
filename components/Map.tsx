@@ -41,8 +41,8 @@ export default function Map() {
   }
 
   return (
-    <div className="flex justify-center items-center mt-40">
-      <div className="App w-[1100px] h-[1034px] ml-40">
+    <div className="flex justify-center items-center mt-20 ml-20">
+      <div className="App w-[1100px] h-[1020px] ml-40">
         {" "}
         {!isLoaded ? (
           <h1>Loading...</h1>
@@ -88,7 +88,7 @@ export default function Map() {
           </GoogleMap>
         )}
       </div>
-      <div className="flex-1 ml-40 mr-40 w-[542px] h-[1034px]">
+      <div className="flex-1 ml-40 mr-40 w-[542px] h-[1034px] pt-10 pl-20">
         <p className="text-[18px]" style={{ color: "#DCD5C6" }}>
           <span style={{ fontWeight: "bold", textDecoration: "underline" }}>SPORTS & LEISURE </span>
           <br />
