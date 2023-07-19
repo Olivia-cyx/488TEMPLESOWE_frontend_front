@@ -6,46 +6,8 @@ import { motion } from "framer-motion"
 import { navVariants } from "../utils/motion"
 import { GoogleMap, InfoWindow, Marker, useJsApiLoader, useLoadScript } from "@react-google-maps/api"
 import { useMemo } from "react"
+import { mapStyles, markers } from "../constants/map"
 
-const mapStyles = [
-  {
-    featureType: "water",
-    elementType: "geometry",
-    stylers: [{ color: "#2D3747" }],
-  },
-  {
-    featureType: "landscape",
-    elementType: "geometry",
-    stylers: [{ color: "#E5D1BA" }],
-  },
-  {
-    featureType: "road",
-    elementType: "geometry",
-    stylers: [{ color: "#F6F1E6" }],
-  },
-  {
-    featureType: "water",
-    stylers: [
-      {
-        color: "#1994bf",
-      },
-      {
-        saturation: -69,
-      },
-      {
-        gamma: 0.99,
-      },
-      {
-        lightness: 43,
-      },
-    ],
-  },
-  {
-    featureType: "poi.park",
-    elementType: "geometry",
-    stylers: [{ color: "#BAB393" }], // Change to the color you want for reserves
-  },
-]
 type MarkerData = {
   id: number
   address: string
@@ -61,18 +23,12 @@ export default function Map() {
   const [mapRef, setMapRef] = useState()
   const [isOpen, setIsOpen] = useState(false)
   const [infoWindowData, setInfoWindowData] = useState<MarkerData | undefined>()
-  const markers = [
-    { address: "488 Templestowe", lat: -37.756959, lng: 145.11248, icon: "/map/Component 15 – 1.png" },
-    { address: "Address1", lat: -37.75, lng: 145.128 },
-    // { address: "Address2", lat: 18.5314, lng: 73.8446 },
-    // { address: "Address3", lat: 18.5642, lng: 73.7769 },
-  ]
   const mapRefe = useRef<google.maps.Map | null>(null)
   const onMapLoad = useCallback((map: any) => {
     setMapRef(map)
     const bounds = new google.maps.LatLngBounds()
     markers.forEach(({ lat, lng }) => bounds.extend({ lat, lng }))
-    map.fitBounds(bounds)
+    map.setCenter(defaultCenter)
   }, [])
 
   const handleMarkerClick = (id: number, lat: number, lng: number, address: string) => {
@@ -85,8 +41,8 @@ export default function Map() {
   }
 
   return (
-    <div className="flex justify-center items-center mt-40">
-      <div className="App w-[1100px] h-[1034px] ml-40">
+    <div className="flex justify-center items-center mt-20 ml-20">
+      <div className="App w-[1100px] h-[1020px] ml-40">
         {" "}
         {!isLoaded ? (
           <h1>Loading...</h1>
@@ -95,20 +51,24 @@ export default function Map() {
             id="map"
             mapContainerClassName="map-container"
             center={defaultCenter}
-            zoom={10}
+            zoom={16}
             onLoad={onMapLoad}
             onClick={() => setIsOpen(false)}
-            options={{ styles: mapStyles }}
+            options={{
+              styles: mapStyles,
+              minZoom: 15.5, // the furthest the user can zoom out
+              maxZoom: 20,
+            }}
           >
-            {markers.map(({ address, lat, lng, icon = "/path/to/default/icon.png" }, ind) => (
+            {markers.map(({ address, lat, lng, icon = "http://maps.google.com/mapfiles/ms/icons/red-dot.png", iconSize = { width: 40, height: 60 } }, ind) => (
               <Marker
                 key={ind}
                 position={{ lat, lng }}
                 icon={{
                   url: icon,
-                  scaledSize: new window.google.maps.Size(100, 100),
+                  scaledSize: new window.google.maps.Size(iconSize.width, iconSize.height),
                   origin: new window.google.maps.Point(0, 0),
-                  anchor: new window.google.maps.Point(60, 60),
+                  anchor: new window.google.maps.Point(0, 0),
                 }}
                 onClick={() => {
                   handleMarkerClick(ind, lat, lng, address)
@@ -128,7 +88,7 @@ export default function Map() {
           </GoogleMap>
         )}
       </div>
-      <div className="flex-1 ml-40 mr-40 w-[542px] h-[1034px]">
+      <div className="flex-1 ml-40 mr-40 w-[542px] h-[1034px] pt-10 pl-20">
         <p className="text-[18px]" style={{ color: "#DCD5C6" }}>
           <span style={{ fontWeight: "bold", textDecoration: "underline" }}>SPORTS & LEISURE </span>
           <br />

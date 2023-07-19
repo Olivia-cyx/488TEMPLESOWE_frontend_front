@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import styles from "../styles"
 import { motion } from "framer-motion"
 import { navVariants } from "../utils/motion"
@@ -18,7 +18,22 @@ export const Footer: React.FC = () => {
     throw new Error("Environment variables not set")
   }
   const [contactPreference, setContactPreference] = useState("email")
+
   const form = useRef<HTMLFormElement | null>(null)
+
+  const [emailSent, setEmailSent] = useState(false)
+
+  useEffect(() => {
+    let timer: number | undefined
+    if (emailSent) {
+      timer = window.setTimeout(() => {
+        setEmailSent(false)
+      }, 20000) // time in milliseconds
+    }
+
+    // Cleanup function to clear the timeout when the component is unmounted or if the email is sent multiple times
+    return () => clearTimeout(timer)
+  }, [emailSent])
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault()
@@ -30,6 +45,7 @@ export const Footer: React.FC = () => {
     emailjs.sendForm(process.env.NEXT_PUBLIC_SERVER_ID!, process.env.NEXT_PUBLIC_TEMPLATE_ID!, form.current, process.env.NEXT_PUBLIC_PUBLIC_KEY!).then(
       (result: EmailJSResponseStatus) => {
         console.log(result.text)
+        setEmailSent(true)
       },
       (error: Error) => {
         console.log(error.message)
@@ -55,7 +71,7 @@ export const Footer: React.FC = () => {
               type="text"
               id="user_name"
               // eslint-disable-next-line max-len
-              className="bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mt-10"
+              className="bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mt-10 custom-placeholder"
               placeholder="Your Name*"
               name="user_name"
               required
@@ -65,7 +81,7 @@ export const Footer: React.FC = () => {
               type="email"
               id="email_address"
               // eslint-disable-next-line max-len
-              className="bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mt-10"
+              className="bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mt-10 custom-placeholder"
               placeholder="Your Email Address*"
               name="email_address"
               required
@@ -75,16 +91,19 @@ export const Footer: React.FC = () => {
               type="tel"
               id="mobile_number"
               // eslint-disable-next-line max-len
-              className="bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mt-10"
+              className="bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mt-10 custom-placeholder"
               placeholder="Mobile number *"
               name="mobile_number"
               required
               style={{ width: "541px", backgroundColor: "#776D65" }}
             />
             <div className="flex flex-col items-start mt-10">
-              <p className="mt-2" style={{ color: "#DCD5C6" }}>
-                Best Contact Method :
-              </p>
+              <div>
+                <p className="mt-3 pb-3" style={{ color: "#DCD5C6" }}>
+                  Best Contact Method :
+                </p>
+              </div>
+
               <div className="flex items-start">
                 <input
                   id="contact-via-email"
@@ -125,11 +144,21 @@ export const Footer: React.FC = () => {
             <textarea
               id="message"
               // eslint-disable-next-line max-len
-              className="bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mt-10"
+              className="bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mt-10 custom-placeholder"
               placeholder="Message (Optional)"
               name="message"
               style={{ width: "541px", height: "174px", backgroundColor: "#776D65" }}
             />
+            <div>
+              {emailSent && (
+                <div className="mb-4 rounded-lg bg-primary-100 px-6 py-5 text-base text-primary-600" role="alert">
+                  <h2 className="Freight Big Pro text-[21px]" style={{ color: "#DCD5C6" }}>
+                    {" "}
+                    Enquiry has been sent successfully!{" "}
+                  </h2>
+                </div>
+              )}
+            </div>
             <div className="container flex justify-center items-center">
               {" "}
               <button type="submit" className="bg-[#DCD5C6] hover:bg-hover-gray transition-colors duration-400 ease-in py-2 px-6 rounded mt-10">
