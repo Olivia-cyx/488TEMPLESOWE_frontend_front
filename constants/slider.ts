@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import coverpage from "../public/Mask Group 5.png"
 import bathroom from "../public/Mask Group 6.png"
 import life1 from "../public/Lifestyle/Mask Group 20.png"
@@ -18,18 +19,42 @@ export const kitchImageSlide = [
 export const lifeStyleImageSlide = [
   {
     url: life1,
+    style: {
+      top: "40%",
+      left: "10%",
+    },
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dignissimos rerum, maxime minus repudiandae hic dolores voluptatum expedita odioipsa nihil",
   },
   {
     url: life2,
+    style: {
+      top: "65%",
+      left: "60%",
+    },
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dignissimos rerum, maxime minus repudiandae hic dolores voluptatum expedita odioipsa nihil",
   },
   {
     url: life3,
+    style: {
+      top: "65%",
+      left: "10%",
+    },
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dignissimos rerum, maxime minus repudiandae hic dolores voluptatum expedita odioipsa nihil",
   },
-
   {
     url: life4,
+    style: {
+      top: "40%",
+      left: "10%",
+    },
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dignissimos rerum, maxime minus repudiandae hic dolores voluptatum expedita odioipsa nihil",
   },
   {
     url: life5,
+    style: {
+      top: "65%",
+      left: "60%",
+    },
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dignissimos rerum, maxime minus repudiandae hic dolores voluptatum expedita odioipsa nihil",
   },
 ]
