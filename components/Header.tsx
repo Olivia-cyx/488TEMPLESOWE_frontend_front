@@ -1,18 +1,26 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import styles from "../styles"
 import { motion } from "framer-motion"
 import { navVariants } from "../utils/motion"
 import { ENavBarTab } from "../constants/navbar"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 export const Header: React.FC = () => {
-  const [active, setActive] = useState(ENavBarTab.ABOUT)
+  const endpoint = usePathname().replace("/", "").toUpperCase()
+  const [active, setActive] = useState<ENavBarTab | string>(ENavBarTab.ABOUT)
 
   const handleItemClick = (navBarTab: ENavBarTab) => {
     setActive(navBarTab)
   }
+
+  useEffect(() => {
+    if (endpoint !== "") {
+      setActive(endpoint)
+    }
+  }, [endpoint])
 
   return (
     <div className="bg-primary-yellow overflow-hidden">
