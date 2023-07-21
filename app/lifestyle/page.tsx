@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 "use client"
 
+import { useState } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Pagination } from "swiper/modules"
 import Image from "next/image"
@@ -8,9 +9,10 @@ import { lifeStyleImageSlide } from "../../constants/slider"
 import { motion } from "framer-motion"
 import { staggerContainer } from "../../utils/motion"
 import TextBox from "./components/TextBox"
+
+import "swiper/css/navigation"
 import "swiper/css"
 import "swiper/css/pagination"
-import { useState } from "react"
 
 const LifeStylePage: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
