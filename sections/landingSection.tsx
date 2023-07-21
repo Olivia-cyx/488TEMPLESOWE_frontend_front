@@ -8,7 +8,7 @@ import { slideIn, textVariant } from "../utils/motion"
 export default function LandingPage() {
   return (
     <motion.div className="flex justify-center items-center flex-col ">
-      <img src="Titlepage logo.png" alt="logo" className="w-[700px] h-[700px] object-centre " />
+      <img src="Titlepage logo.png" alt="logo" className="w-[700px] h-[700px] object-center " />
       <div className="py-20 flex items-center">
         <button className="bg-[#DCD5C6] hover:bg-hover-gray transition-colors duration-400 ease-in py-4 px-8 rounded-lg">
           <h2 className="Freight Big Pro text-[21px]" style={{ color: "#544E48" }}>
