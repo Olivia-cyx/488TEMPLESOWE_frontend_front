@@ -15,6 +15,7 @@ export const Header: React.FC = () => {
 
   const handleItemClick = (navBarTab: ENavBarTab) => {
     setActive(navBarTab)
+    setOpen(false)
   }
 
   useEffect(() => {
