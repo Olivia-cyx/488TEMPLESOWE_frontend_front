@@ -50,8 +50,8 @@ const LifeStylePage: React.FC = () => {
           className="w-full h-screen relative"
           onSlideChange={handleSlideChange}
         >
-          <div className="absolute top-[5%] left-[50%] max-w-[20%] min-w-[15%]">
-            <img src="Titlepage logo.png" alt="bedroom" className="max-w-[100%]  object-contain ml-[-50%]" />
+          <div className="absolute top-[5%] left-[50%] max-w-[300px] min-w-[100px]">
+            <img src="Titlepage logo.png" alt="bedroom" className="  object-contain ml-[-50%]" />
           </div>
           {renderContent()}
           {lifeStyleImageSlide.map((imageSlice, index) => {

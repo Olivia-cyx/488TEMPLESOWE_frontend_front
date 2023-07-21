@@ -29,7 +29,7 @@ export const lifeStyleImageSlide = [
     url: life2,
     style: {
       top: "65%",
-      left: "60%",
+      left: "50%",
     },
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dignissimos rerum, maxime minus repudiandae hic dolores voluptatum expedita odioipsa nihil",
   },
@@ -53,7 +53,7 @@ export const lifeStyleImageSlide = [
     url: life5,
     style: {
       top: "65%",
-      left: "60%",
+      left: "50%",
     },
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dignissimos rerum, maxime minus repudiandae hic dolores voluptatum expedita odioipsa nihil",
   },
