@@ -42,7 +42,7 @@ export default function Map() {
 
   return (
     <div className="flex justify-center items-center mt-20 ml-20">
-      <div className="App w-[1000px] h-[1020px] ml-40">
+      <div className="App w-[900px] h-[1020px] ml-40">
         {" "}
         {!isLoaded ? (
           <h1>Loading...</h1>
