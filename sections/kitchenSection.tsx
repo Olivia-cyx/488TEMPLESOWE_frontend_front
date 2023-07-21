@@ -128,7 +128,7 @@ export default function KitchenSection() {
             className={"flex justify-center items-center pt-10"}
           >
             <motion.div variants={fadeIn("up", "tween", 0.05, 0.25)} className={`flex-1 ${styles.flexCenter}`}>
-              <img src="living_room.png" alt="bedroom" className="w-[950px] h-[677px] object-contain" />
+              <img src="living_Room.png" alt="bedroom" className="w-[950px] h-[677px] object-contain" />
             </motion.div>
           </motion.div>
           <motion.div
