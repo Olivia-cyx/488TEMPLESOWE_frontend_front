@@ -24,11 +24,11 @@ export const Header: React.FC = () => {
     }
   }, [endpoint])
   return (
-    <nav className="w-full fixed top-0 left-0 shadow-md z-50">
-      <div className="bg-primary-yellow md:flex items-center justify-between py-1 md:px-10 px-7 relative">
+    <nav className="w-full fixed top-0 left-0 shadow-md z-10 md:h-20" style={{ boxShadow: "0px 20px 20px 5px rgba(0,0,0,0.5)" }}>
+      <div className="bg-primary-yellow md:flex items-center justify-between py-1 md:px-10 px-7 relative h-full">
         {/* logo */}
-        <div className="flex items-center md:relative md:after:absolute  after:top-[0] md:after:left-[120px] md:after:bottom-0 md:after:w-[3px] md:after:bg-light-gray">
-          <img src="/favicon.ico" alt="logo" className="h-12" />
+        <div className="flex items-center md:relative md:after:absolute  after:top-[0] md:after:left-[120px] md:after:bottom-0 md:after:w-[3px] md:after:bg-light-gray md:w-32">
+          <img src="/logo/narbarLOGO.png" alt="logo" className="h-14" />
         </div>
 
         {/* menu */}
@@ -38,12 +38,12 @@ export const Header: React.FC = () => {
 
         {/* nav tab */}
         <ul
-          className={`md:flex md:items-center md:pb-0 pb-12 absolute bg-primary-yellow  md:static w-full md:w-auto left-0 md:pl-0 pl-7 transition-all duration-500 ease-in md:z-50 z-[-1] ${
+          className={`md:flex md:items-center md:pb-0 pb-12 absolute bg-primary-yellow md:static w-full md:w-auto left-0 md:pl-0 pl-7 transition-all duration-500 ease-in md:z-10 z-[-1] ${
             open ? "top-[50px]" : "top-[-490px]"
           }`}
         >
           {Object.values(ENavBarTab).map((navBarTab) => (
-            <li key={navBarTab} className="md:ml-8 md:my-0 my-7">
+            <li key={navBarTab} className="md:mx-5 xl:mx-20 md:my-0 my-7">
               <Link
                 className={`Freight Big Pro text-[16px] cursor-pointer hover:underline ${active === navBarTab ? "underline" : ""}`}
                 style={{ color: "#DCD5C6", fontWeight: "lighter" }}
@@ -57,6 +57,7 @@ export const Header: React.FC = () => {
           ))}
           {/* enquire */}
 
+          {/* mobile button */}
           <button
             className="bg-[#DCD5C6] hover:bg-hover-gray transition-colors duration-400 ease-in py-1 px-4 rounded Freight Big Pro text-[16px] md:hidden block"
             style={{ color: "#544E48" }}
@@ -65,6 +66,7 @@ export const Header: React.FC = () => {
           </button>
         </ul>
 
+        {/* desktop button */}
         <button
           className="bg-[#DCD5C6] hover:bg-hover-gray transition-colors duration-400 ease-in py-1 px-4 rounded Freight Big Pro text-[16px] md:block hidden"
           style={{ color: "#544E48" }}
