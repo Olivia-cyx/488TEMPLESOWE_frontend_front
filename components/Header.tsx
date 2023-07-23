@@ -28,7 +28,7 @@ export const Header: React.FC = () => {
       <div className="bg-primary-yellow md:flex items-center justify-between py-1 md:px-10 px-7 relative h-full">
         {/* logo */}
         <div className="flex items-center md:relative md:after:absolute  after:top-[0] md:after:left-[120px] md:after:bottom-0 md:after:w-[3px] md:after:bg-light-gray md:w-32">
-          <img src="/logo/narbarLOGO.png" alt="logo" className="h-12" />
+          <img src="/logo/narbarLOGO.png" alt="logo" className="h-14" />
         </div>
 
         {/* menu */}
@@ -38,7 +38,7 @@ export const Header: React.FC = () => {
 
         {/* nav tab */}
         <ul
-          className={`md:flex md:items-center md:pb-0 pb-12 absolute bg-primary-yellow md:static w-full md:w-auto left-0 md:pl-0 pl-7 transition-all duration-500 ease-in md:z-50 z-[-1] ${
+          className={`md:flex md:items-center md:pb-0 pb-12 absolute bg-primary-yellow md:static w-full md:w-auto left-0 md:pl-0 pl-7 transition-all duration-500 ease-in md:z-10 z-[-1] ${
             open ? "top-[50px]" : "top-[-490px]"
           }`}
         >
