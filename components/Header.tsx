@@ -28,7 +28,7 @@ export const Header: React.FC = () => {
       <div className="bg-primary-yellow md:flex items-center justify-between py-1 md:px-10 px-7 relative h-full">
         {/* logo */}
         <div className="flex items-center md:relative md:after:absolute  after:top-[0] md:after:left-[120px] md:after:bottom-0 md:after:w-[3px] md:after:bg-light-gray md:w-32">
-          <img src="/logo/narbarLOGO.png" alt="logo" className="h-14" />
+          <img src="/Logo/narbarLOGO.png" alt="logo" className="h-14" />
         </div>
 
         {/* menu */}
