@@ -50,7 +50,7 @@ const LifeStylePage: React.FC = () => {
           className="w-full h-screen relative"
           onSlideChange={handleSlideChange}
         >
-          <div className="absolute top-[5%] left-[50%] max-w-[300px] min-w-[100px]">
+          <div className="absolute md:top-[5%] top-[8%] left-[50%] max-w-[300px] min-w-[100px] z-10">
             <img src="Titlepage logo.png" alt="bedroom" className="  object-contain ml-[-50%]" />
           </div>
           {renderContent()}
