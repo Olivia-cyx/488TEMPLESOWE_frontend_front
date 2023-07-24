@@ -18,9 +18,13 @@ export default function BedroomSection() {
           className={"xl:flex xl:pt-60 md:justify-center items-center flex-col relative  "}
         >
           <motion.div variants={planetVariants("left")} className={`flex-1 ${styles.flexCenter}`}>
-            <img src="LOGO_bedroom - Copy.png" alt="LOGO_bedroom" className="xl:w-[142.5px] xl:h-[80.85px] md:w-[120.5px] h-[60.85px] mt-10 object-contain" />
+            <img
+              src="LOGO_bedroom - Copy.png"
+              alt="LOGO_bedroom"
+              className="xl:w-[142.5px] xl:h-[80.85px] xl:mt-0 md:w-[120.5px] h-[60.85px] mt-20 object-contain"
+            />
           </motion.div>
-          <div className="xl:w-[259px] xl:h-[510px] xl:pt-20 mt-0 md:pt-20 mt-20">
+          <div className="xl:w-[259px] xl:h-[510px] xl:pt-20 mt-0 md:pt-15 mt-15">
             <TypingText
               title="Indulge in private retreats: 
 "
