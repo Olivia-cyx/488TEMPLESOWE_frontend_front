@@ -8,7 +8,7 @@ import Map from "../components/Map"
 
 const Page: React.FC = () => (
   <>
-    <div className={`bg-primary-yellow overflow-hidden xl:${styles.height3113} md:${styles.height844}`}>
+    <div className={`bg-primary-yellow overflow-hidden xl:${styles.height3113}  md:${styles.height844}`}>
       <div className={"coverPage"}>
         <LandingPage />
       </div>
