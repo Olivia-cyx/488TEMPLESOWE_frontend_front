@@ -16,16 +16,19 @@ export default function AboutPage() {
         className={"flex justify-center items-center flex-col space-y-30"}
       >
         <div className="HorizontalLineAfter">
-          <img src="Titlepage logo.png" alt=" logo" className="w-[248px] h-[250px] object-centre mb-10" />
+          <img src="Titlepage logo.png" alt=" logo" className="xl:w-[248px] xl:h-[250px] xl:mt-0 object-centre xl:mb-10 md:w-[148px] h-[180px] mt-10" />
         </div>
 
-        <div className="w-[1011px] h-[297px] pt-20">
-          <motion.p variants={fadeIn("up", "tween", 0.2, 1)} className="mt-[8px] freightBigPro sm:text-[24px] text-[20px] text-center text-secondary-white">
+        <div className="xl:w-[1011px] xl:h-[297px] xl:mt-0 xl:pt-20 md:pt-10 mt-20">
+          <motion.p
+            variants={fadeIn("up", "tween", 0.2, 1)}
+            className="mt-[8px] freightBigPro xl:text-[24px] xl:mb-0 md:text-[20px] mb-20 text-center text-secondary-white"
+          >
             Showcasing streamlined sophistication and the latest trends in open plan architectural design, these 8 exemplary homes deliver executive standards
             and abundant lifestyles. Balance leafy tranquility with a seamless city connection at this unrivalled location.
           </motion.p>
         </div>
-        <img src="Building front_ed.png" alt=" logo" className="w-[1364px] h-[800px] object-centre" />
+        <img src="Building front_ed.png" alt=" logo" className="xl:w-[1364px] xl:h-[800px] object-centre md:w-[464px] h-[300px]" />
       </motion.div>
     </section>
   )

@@ -42,6 +42,37 @@
   text-decoration: underline;
 }
 
+@media (max-width: 1280px) {
+  .HorizontalLineAfter {
+    position: relative;
+  }
+  .HorizontalLineAfter::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* This will place the line below the parent's content */
+  left: -80px;
+  right: -80px;
+  height: 2px; /* This controls the thickness of the line */
+  background: rgb(128, 123, 123); /* Change color according to your needs */
+  }
+}
+
+@media (max-width: 768px) {
+  .HorizontalLineAfter {
+    position: relative;
+  }
+  .HorizontalLineAfter::after {
+  content: "";
+  position: absolute;
+  margin-top: 30px;
+  top: 100%; 
+  left: -60px;
+  right: -60px;
+  height: 2px;
+  background: rgb(128, 123, 123); 
+  }
+}
+
 .active {
   border-bottom: 2px solid #000; /* Change color as needed */
 }
@@ -50,9 +81,21 @@
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../public/Coverpage.png") no-repeat center center;
   background-size: cover;
   width: 100%;
-  height: 1080px;
+  height: 1200px;
   background-blend-mode: multiply;
   opacity: 80%;
+}
+
+@media (max-width: 1280px) {
+  .coverPage {
+    height: 900px;
+  }
+}
+
+@media (max-width: 768px) {
+  .coverPage {
+    height: 900px; 
+  }
 }
 
 .teamcoverPage {
