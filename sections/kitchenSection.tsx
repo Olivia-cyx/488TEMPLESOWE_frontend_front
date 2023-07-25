@@ -32,7 +32,11 @@ export default function KitchenSection() {
                   className="xl:w-[950px] xl:h-[677px] xl:mt-0 xl:pt-0 md:w-[550px] md:h-[177px] mt-10 pt-10 object-contain "
                 />
                 <div className="absolute bottom-10 right-10 flex items-start justify-start w-full h-full">
-                  <img src="LUXE_Design.png" alt="bedroom" className="xl:w-[177.76px] xl:h-[238.41px] md:w-[77.76px] h-[170.41px] object-contain" />
+                  <img
+                    src="LUXE_Design.png"
+                    alt="bedroom"
+                    className="xl:w-[177.76px] xl:h-[238.41px] xl:ml-0 xl:mt-0 md:w-[67.76px] h-[160.41px] ml-6 mt-3 object-contain"
+                  />
                 </div>
               </div>
             </motion.div>
