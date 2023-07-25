@@ -130,7 +130,11 @@ export default function Map() {
             34.St Gregory The Great Primary
             <br /> 35.Templestowe College
             <br />
-            <br /> <span className= "mb-30 pb-30"style={{ fontWeight: "bold", textDecoration: "underline" }}>MEDICAL CENTRES</span> <br />
+            <br />{" "}
+            <span className="mb-30 pb-30" style={{ fontWeight: "bold", textDecoration: "underline" }}>
+              MEDICAL CENTRES
+            </span>{" "}
+            <br />
             41.Foote Street Medical Centre
             <br /> 42.Doncaster-Templestowe Medical Centre <br />
             43.Manningham Medical Centre
