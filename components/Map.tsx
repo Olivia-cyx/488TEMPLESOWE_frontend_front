@@ -123,7 +123,7 @@ export default function Map() {
             <br />
             <span style={{ fontWeight: "bold", textDecoration: "underline" }}>QUALITY SCHOOLS </span>
             <br />
-            31.St Kevin’s Primary school
+            31.St Kevin's Primary school
             <br /> 32.Templestowe Valley Primary School <br />
             33.Templestowe HeightsPrimary School
             <br />
