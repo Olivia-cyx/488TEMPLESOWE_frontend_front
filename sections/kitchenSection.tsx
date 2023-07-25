@@ -118,7 +118,13 @@ export default function KitchenSection() {
             className={"flex justify-center items-center xl:pt-10 xl:mt-10 md:pt-10 mt-10"}
           >
             <motion.div variants={fadeIn("up", "tween", 0.05, 0.25)} className={`flex-1 ${styles.flexCenter}`}>
-              <Swiper slidesPerView={1} modules={[Pagination, Navigation]} pagination={{ clickable: true }} className="w-[950px] h-[677px]" navigation>
+              <Swiper
+                slidesPerView={1}
+                modules={[Pagination, Navigation]}
+                pagination={{ clickable: true }}
+                className="md:w-[950px] md:h-[677px] w-[342px] h-[244px]"
+                navigation
+              >
                 {kitchImageSlide.map((imageSlice, index) => (
                   <SwiperSlide key={index}>
                     <Image src={imageSlice.url} alt="bedroom" style={{ objectFit: "cover" }} fill />
@@ -129,13 +135,13 @@ export default function KitchenSection() {
           </motion.div>
         </div>
 
-        <div className="xl:flex justify-center items-center xl:space-x-120 xl:mt-0 md:mt-20 pt-30">
+        <div className="xl:flex justify-center items-center xl:space-x-120 xl:mt-0  ">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
-            className={"xl:flex justify-center items-center relative xl:space-x-120 xl:mt-0 md:mt-20 pt-30"}
+            className={"xl:flex justify-center items-center relative xl:space-x-120 "}
           >
             <motion.div variants={fadeIn("up", "tween", 0.05, 0.25)} className={`flex-1 ${styles.flexCenter}`}>
               <img src="living_Room.png" alt="bedroom" className="xl:w-[950px] xl:h-[677px] xl:mt-0 md:w-[350px] md:h-[177px] mt-20 pt-20 object-contain" />
