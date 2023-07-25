@@ -41,8 +41,8 @@ export default function Map() {
   }
 
   return (
-    <div className="flex justify-center items-center mt-20 ml-40 pl-30">
-      <div className=" w-[1000px] h-[1000px] ml-40">
+    <div className="xl:flex justify-center items-center xl:mt-20 xl:ml-40 xl:pl-30 xl:pt-10 md:mt-40 pt-40 pl-5 pr-5">
+      <div className=" xl:w-[1000px] xl:h-[1000px] xl:ml-40 md:w-[360px] md:[360px] ">
         {" "}
         {!isLoaded ? (
           <h1>Loading...</h1>
@@ -88,51 +88,55 @@ export default function Map() {
           </GoogleMap>
         )}
       </div>
-      <div className="flex-1 ml-40 mr-10 w-[600px] h-[1034px] pl-20 pt-12">
-        <p className="text-[18px]" style={{ color: "#DCD5C6" }}>
-          <span style={{ fontWeight: "bold", textDecoration: "underline" }}>SPORTS & LEISURE </span>
-          <br />
-          01. Manningham Templestowe Leisure Centre <br />
-          02.Westerfolds Sport Centre <br />
-          03.Rosanna Golf Course <br />
-          04.The Aquarena Aquatic and Leisure Centre <br />
-          05.Eastern Golf Club <br />
-          <br />
-          <span style={{ fontWeight: "bold", textDecoration: "underline" }}>SOMETHING GREEN</span> <br />
-          21.Westerfolds Park
-          <br />
-          22.Koonung Creek Reserve <br />
-          23.Finns Reserve <br />
-          24.Templestowe Reserve <br /> 25.Main Yarra Trail
-          <br /> 26. Ruffey Creek Linear Park <br />
-          <br />
-          <span style={{ fontWeight: "bold", textDecoration: "underline" }}>SHOPPING</span> <br />
-          11.Templestowe Village SC <br />
-          12.The Pines Shopping Centre
-          <br /> 13.Westfield Doncaster <br />
-          14.Macedon Plaza
-          <br />
-          <br /> <span style={{ fontWeight: "bold", textDecoration: "underline" }}>BUS ROUTE </span>
-          <br /> 309: City - Donvale <br />
-          281: Templestowe - Deakin University
-          <br /> 282: Templestowe Village SC, Doncaster SC
-          <br /> 280: Tunstall Square SC, Doncaster <br />
-          <br />
-          <span style={{ fontWeight: "bold", textDecoration: "underline" }}>QUALITY SCHOOLS </span>
-          <br />
-          31.St Kevin’s Primary school
-          <br /> 32.Templestowe Valley Primary School <br />
-          33.Templestowe HeightsPrimary School
-          <br />
-          34.St Gregory The Great Primary
-          <br /> 35.Templestowe College
-          <br />
-          <br /> <span style={{ fontWeight: "bold", textDecoration: "underline" }}>MEDICAL CENTRES</span> <br />
-          41.Foote Street Medical Centre
-          <br /> 42.Doncaster-Templestowe Medical Centre <br />
-          43.Manningham Medical Centre
-          <br /> 44.Macedon Medical Centre
-        </p>
+      <div className="flex-1 xl:ml-40 xl:mr-10 xl:w-[600px] xl:h-[1034px] pl-20 pt-12 xl:mb-0 md:mb-50 pb-50">
+        <div className="md:grid xl:grid-cols-1 md:grid-cols-2 gap-4 xl:text-[18px] md:text-[6px]" style={{ color: "#DCD5C6" }}>
+          <p className="md:col-span-1 xl:col-span-full">
+            <span style={{ fontWeight: "bold", textDecoration: "underline" }}>SPORTS & LEISURE </span>
+            <br />
+            01. Manningham Templestowe Leisure Centre <br />
+            02.Westerfolds Sport Centre <br />
+            03.Rosanna Golf Course <br />
+            04.The Aquarena Aquatic and Leisure Centre <br />
+            05.Eastern Golf Club <br />
+            <br />
+            <span style={{ fontWeight: "bold", textDecoration: "underline" }}>SOMETHING GREEN</span> <br />
+            21.Westerfolds Park
+            <br />
+            22.Koonung Creek Reserve <br />
+            23.Finns Reserve <br />
+            24.Templestowe Reserve <br /> 25.Main Yarra Trail
+            <br /> 26. Ruffey Creek Linear Park <br />
+            <br />
+          </p>
+          <p className="md:col-span-1 xl:col-span-full">
+            <span style={{ fontWeight: "bold", textDecoration: "underline" }}>SHOPPING</span> <br />
+            11.Templestowe Village SC <br />
+            12.The Pines Shopping Centre
+            <br /> 13.Westfield Doncaster <br />
+            14.Macedon Plaza
+            <br />
+            <br /> <span style={{ fontWeight: "bold", textDecoration: "underline" }}>BUS ROUTE </span>
+            <br /> 309: City - Donvale <br />
+            281: Templestowe - Deakin University
+            <br /> 282: Templestowe Village SC, Doncaster SC
+            <br /> 280: Tunstall Square SC, Doncaster <br />
+            <br />
+            <span style={{ fontWeight: "bold", textDecoration: "underline" }}>QUALITY SCHOOLS </span>
+            <br />
+            31.St Kevin’s Primary school
+            <br /> 32.Templestowe Valley Primary School <br />
+            33.Templestowe HeightsPrimary School
+            <br />
+            34.St Gregory The Great Primary
+            <br /> 35.Templestowe College
+            <br />
+            <br /> <span className= "mb-30 pb-30"style={{ fontWeight: "bold", textDecoration: "underline" }}>MEDICAL CENTRES</span> <br />
+            41.Foote Street Medical Centre
+            <br /> 42.Doncaster-Templestowe Medical Centre <br />
+            43.Manningham Medical Centre
+            <br /> 44.Macedon Medical Centre
+          </p>
+        </div>
       </div>
     </div>
   )
