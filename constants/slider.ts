@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import coverpage from "../public/Mask Group 5.png"
 import bathroom from "../public/Mask Group 6.png"
 import life1 from "../public/Lifestyle/Mask Group 20.png"
