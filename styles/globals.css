@@ -47,13 +47,13 @@
     position: relative;
   }
   .HorizontalLineAfter::after {
-  content: "";
-  position: absolute;
-  top: 100%; /* This will place the line below the parent's content */
-  left: -80px;
-  right: -80px;
-  height: 2px; /* This controls the thickness of the line */
-  background: rgb(128, 123, 123); /* Change color according to your needs */
+    content: "";
+    position: absolute;
+    top: 100%; /* This will place the line below the parent's content */
+    left: -80px;
+    right: -80px;
+    height: 2px; /* This controls the thickness of the line */
+    background: rgb(128, 123, 123); /* Change color according to your needs */
   }
 }
 
@@ -62,14 +62,14 @@
     position: relative;
   }
   .HorizontalLineAfter::after {
-  content: "";
-  position: absolute;
-  margin-top: 30px;
-  top: 100%; 
-  left: -60px;
-  right: -60px;
-  height: 2px;
-  background: rgb(128, 123, 123); 
+    content: "";
+    position: absolute;
+    margin-top: 30px;
+    top: 100%;
+    left: -60px;
+    right: -60px;
+    height: 2px;
+    background: rgb(128, 123, 123);
   }
 }
 
@@ -94,7 +94,7 @@
 
 @media (max-width: 768px) {
   .coverPage {
-    height: 900px; 
+    height: 900px;
   }
 }
 
@@ -162,16 +162,17 @@ h1::after {
 }
 
 @media screen and (min-width: 768px) {
-h1:before,
-h1:after {
-  content: "";
-  display: inline-block;
-  height: 2px;
-  width: 600px;
-  background: #dcd5c6;
-  margin-right: 10px;
-  vertical-align: middle;
-}}
+  h1:before,
+  h1:after {
+    content: "";
+    display: inline-block;
+    height: 2px;
+    width: 600px;
+    background: #dcd5c6;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+}
 
 .custom-radio {
   background-color: transparent;
@@ -195,4 +196,10 @@ h1:after {
     top: 40% !important;
     left: 20% !important;
   }
+}
+
+.swiperImage {
+  width: 342px;
+  height: 244px;
+  object-fit: cover;
 }

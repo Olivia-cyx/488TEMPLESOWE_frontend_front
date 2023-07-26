@@ -4,7 +4,6 @@ import styles from "../styles"
 import { motion } from "framer-motion"
 import { fadeIn, planetVariants, staggerContainer } from "../utils/motion"
 import { TypingText } from "../components/Custom.Text"
-import Map from "../components/Map"
 
 export default function OutdoorSection() {
   return (
