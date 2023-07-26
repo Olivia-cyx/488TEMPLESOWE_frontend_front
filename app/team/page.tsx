@@ -14,7 +14,7 @@ const TeamPage: React.FC = () => (
           must encapsulate distinct quality and originality and be both functional and low maintenance with understated elegance. Above all, we strive to instil
           a strong sense of connection and pride in our future homes.
           <br />
-          <br /> Gaining experience in Australia’s property industry has cemented our ambition to provide flawlessly designed and executed boutique homes and
+          <br /> Gaining experience in Australia's property industry has cemented our ambition to provide flawlessly designed and executed boutique homes and
           apartments.
           <br />
           <br /> Rising Holdings has initiated several multi-million dollar projects with more exciting ones in the pipeline. Despite our growth, we still

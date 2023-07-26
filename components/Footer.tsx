@@ -1,23 +1,16 @@
 "use client"
 
 import React, { useEffect, useRef, useState } from "react"
-import styles from "../styles"
-import { motion } from "framer-motion"
-import { navVariants } from "../utils/motion"
-import { ENavBarTab } from "../constants/navbar"
-import Link from "next/link"
 import emailjs, { EmailJSResponseStatus } from "@emailjs/browser"
-import result from "postcss/lib/result"
 
 export const Footer: React.FC = () => {
-  const serverId = process.env.NEXT_PUBLIC_SERVER_ID
-  const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID
+  const serverId = process.env.NEXT_PUBLIC_SERVER_ID as string
+  const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID as string
   const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY
 
   if (!serverId || !templateId || !publicKey) {
     throw new Error("Environment variables not set")
   }
-  const [contactPreference, setContactPreference] = useState("email")
 
   const form = useRef<HTMLFormElement | null>(null)
 
@@ -42,7 +35,7 @@ export const Footer: React.FC = () => {
       return
     }
 
-    emailjs.sendForm(process.env.NEXT_PUBLIC_SERVER_ID!, process.env.NEXT_PUBLIC_TEMPLATE_ID!, form.current, process.env.NEXT_PUBLIC_PUBLIC_KEY!).then(
+    emailjs.sendForm(serverId, templateId, form.current, publicKey).then(
       (result: EmailJSResponseStatus) => {
         console.log(result.text)
         setEmailSent(true)
@@ -57,132 +50,108 @@ export const Footer: React.FC = () => {
     }
   }
   return (
-    <div className={`bg-primary-yellow overflow-hidden ${styles.height1200}`}>
-      <div className="flex flex-col justify-center items-center mt-20">
-        <h1 className="lineBefore Freight Big Pro xl:text-[48px] md:text-[36px]" style={{ color: "#DCD5C6", fontWeight: "lighter" }}>
-          Get in touch with us!
-        </h1>
-        <div className="mt-10">
-          <img src="Group 122.png" alt="picture" className="xl:h-full xl:w-full md:h-[100px] w-[50px]" />
-        </div>
-        <form ref={form} className="contact-form" onSubmit={sendEmail}>
-          <div className="flex flex-col xl:items-start md:justify-center items-center">
-            <input
-              type="text"
-              id="user_name"
-              // eslint-disable-next-line max-len
-              className="xl:w-[541px] md:w-full bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mt-10 custom-placeholder"
-              placeholder="Your Name*"
-              name="user_name"
-              required
-              style={{ backgroundColor: "#776D65" }}
-            />
-            <input
-              type="email"
-              id="email_address"
-              // eslint-disable-next-line max-len
-              className="xl:w-[541px] md:w-[350px] bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mt-10 custom-placeholder"
-              placeholder="Your Email Address*"
-              name="email_address"
-              required
-              style={{ backgroundColor: "#776D65" }}
-            />
-            <input
-              type="tel"
-              id="mobile_number"
-              // eslint-disable-next-line max-len
-              className="xl:w-[541px] md:w-[300px] bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mt-10 custom-placeholder"
-              placeholder="Mobile number *"
-              name="mobile_number"
-              required
-              style={{ backgroundColor: "#776D65" }}
-            />
-            <div className="flex flex-col xl:items-start xl:justify-start mt-10">
-              <div>
-                <p className="mt-3 pb-3" style={{ color: "#DCD5C6" }}>
-                  Best Contact Method :
-                </p>
-              </div>
-
-              <div className="flex justify-start">
-                <input
-                  id="contact-via-email"
-                  type="radio"
-                  value="email"
-                  name="contact_method"
-                  className="w-4 h-4 custom-radio dark:bg-gray-700 dark:border-gray-600"
-                />
-                <label htmlFor="contact-via-email" className="ml-2 text-sm font-medium custom-label">
-                  Email
-                </label>
-              </div>
-              <div className="flex justify-start mt-3">
-                <input
-                  id="contact-via-sms"
-                  type="radio"
-                  value="sms"
-                  name="contact_method"
-                  className="w-4 h-4 custom-radio dark:bg-gray-700 dark:border-gray-600"
-                />
-                <label htmlFor="contact-via-sms" className="ml-2 text-sm font-medium custom-label">
-                  SMS
-                </label>
-              </div>
-              <div className="flex justify-start mt-3">
-                <input
-                  id="contact-via-phone"
-                  type="radio"
-                  value="phone"
-                  name="contact_method"
-                  className="w-4 h-4 custom-radio dark:bg-gray-700 dark:border-gray-600"
-                />
-                <label htmlFor="contact-via-phone" className="ml-2 text-sm font-medium custom-label">
-                  Phone
-                </label>
-              </div>
-            </div>
-            <textarea
-              id="message"
-              // eslint-disable-next-line max-len
-              className="xl:w-[541px] xl:h-[174px] md:w-[300px] h-[100px] bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mt-10 custom-placeholder"
-              placeholder="Message (Optional)"
-              name="message"
-              style={{ backgroundColor: "#776D65" }}
-            />
-            <div>
-              {emailSent && (
-                <div className="mb-4 rounded-lg bg-primary-100 px-6 py-5 text-base text-primary-600" role="alert">
-                  <h2 className="Freight Big Pro text-[21px]" style={{ color: "#DCD5C6" }}>
-                    {" "}
-                    Enquiry has been sent successfully!{" "}
-                  </h2>
-                </div>
-              )}
-            </div>
-            <div className="container flex justify-center items-center">
-              {" "}
-              <button type="submit" className="bg-[#DCD5C6] hover:bg-hover-gray transition-colors duration-400 ease-in py-2 px-6 rounded mt-10">
-                <h2 className="Freight Big Pro xl:text-[21px]" style={{ color: "#544E48" }}>
-                  ENQUIRE
-                </h2>
-              </button>
-            </div>
+    <div className="bg-primary-yellow h-full flex flex-col items-center sm:gap-8 gap-5 sm:py-20 py-10">
+      {/* title */}
+      <div className=" flex w-screen items-center sm:gap-10 gap-4 before:content-[''] before:flex-1 before:h-[2px] before:bg-secondary-white after:content-[''] after:flex-1 after:h-[2px] after:bg-secondary-white">
+        <h1 className=" md:text-[48px] sm:text-[40px] text-[25px] text-secondary-white font-light">Get in touch with us!</h1>
+      </div>
+      {/* logo*/}
+      <div>
+        <img src="Group 122.png" alt="picture" className="sm:h-auto h-[40px]" />
+      </div>
+      {/* form */}
+      <form ref={form} className="flex flex-col items-start sm:gap-10 gap-6 sm:min-w-[550px] min-w-[350px]" onSubmit={sendEmail}>
+        {/* name */}
+        <input
+          type="text"
+          id="user_name"
+          className="w-full text-sm rounded-lg focus:ring-secondary-white focus:border-secondary-white p-2.5 placeholder:text-secondary-white bg-input-gray"
+          placeholder="Your Name*"
+          name="user_name"
+          required
+        />
+        {/* email */}
+        <input
+          type="email"
+          id="email_address"
+          className="w-full bg-input-gray text-sm rounded-lg focus:ring-secondary-white focus:border-secondary-white p-2.5 placeholder:text-secondary-white"
+          placeholder="Your Email Address*"
+          name="email_address"
+          required
+        />
+        {/* mobile number */}
+        <input
+          type="tel"
+          id="mobile_number"
+          className="w-full bg-input-gray text-sm rounded-lg focus:ring-secondary-white focus:border-secondary-white block p-2.5 placeholder:text-secondary-white"
+          placeholder="Mobile number *"
+          name="mobile_number"
+          required
+        />
+        {/* radio buttons */}
+        <div className="flex flex-col items-start gap-2">
+          <div>
+            <p className="text-secondary-white">Best Contact Method :</p>
           </div>
-        </form>
-        <div className="mt-10 xl:w-[516px] md:w-[150px] mr-4 ml-4">
-          <p className="xl:text-[21px] mb:text-[12px]" style={{ color: "#DCD5C6" }}>
-            We are open by private appointment only.
-            <br /> As per the new regulation, we are practicing safe social distancing guidelines including observing a distance of 1.5m between people,
-            registering your attendance, using hand sanitisejjr upon entry and limiting 1 household per appointment.
-          </p>
-          <hr />
-          <p style={{ color: "#DCD5C6" }}>Enquire now to book an inspection</p>
+
+          <div className="flex items-center">
+            <input id="contact-via-email" type="radio" value="email" name="contact_method" className="w-4 h-4 custom-radio" />
+            <label htmlFor="contact-via-email" className="ml-2 text-sm font-medium text-secondary-white">
+              Email
+            </label>
+          </div>
+          <div className="flex items-center">
+            <input id="contact-via-sms" type="radio" value="sms" name="contact_method" className="w-4 h-4 custom-radio" />
+            <label htmlFor="contact-via-sms" className="ml-2 text-sm font-medium text-secondary-white ">
+              SMS
+            </label>
+          </div>
+          <div className="flex items-center">
+            <input id="contact-via-phone" type="radio" value="phone" name="contact_method" className="w-4 h-4 custom-radio" />
+            <label htmlFor="contact-via-phone" className="ml-2 text-sm font-medium text-secondary-white">
+              Phone
+            </label>
+          </div>
         </div>
-        <div className="flex justify-center items-center mt-3 space-x-3">
-          <img src="Group 116.png" alt="facebook" />
-          <img src="Group 120.png" alt="twitter" />
-          <img src="Group 121.png" alt="instagram" />
+
+        {/* message */}
+        <textarea
+          id="message"
+          className="w-full h-[100px] bg-input-gray text-sm rounded-lg focus:ring-secondary-white focus:border-secondary-white block p-2.5 placeholder:text-secondary-white"
+          placeholder="Message (Optional)"
+          name="message"
+        />
+
+        {/* email sent */}
+
+        {emailSent && (
+          <div className="mb-4 rounded-lg bg-primary-100 px-6 py-5 text-base text-primary-600" role="alert">
+            <h2 className="Freight Big Pro text-[21px] text-secondary-white"> Enquiry has been sent successfully! </h2>
+          </div>
+        )}
+
+        {/* submit button */}
+        <div className="container flex justify-center">
+          <button type="submit" className="bg-secondary-white hover:bg-hover-gray transition-colors duration-400 ease-in py-2 px-6 rounded">
+            <h2 className="Freight Big Pro xl:text-[21px] text-primary-yellow">ENQUIRE</h2>
+          </button>
         </div>
+      </form>
+      {/* text */}
+      <div className="sm:w-[516px] w-[350px]">
+        <p className="sm:text-[21px] text-[15px] text-secondary-white">
+          We are open by private appointment only.
+          <br /> As per the new regulation, we are practicing safe social distancing guidelines including observing a distance of 1.5m between people,
+          registering your attendance, using hand sanitisejjr upon entry and limiting 1 household per appointment.
+        </p>
+        <hr className="my-1" />
+        <p className="text-secondary-white">Enquire now to book an inspection</p>
+      </div>
+      {/* social media */}
+      <div className="flex gap-3">
+        <img src="Group 116.png" alt="facebook" />
+        <img src="Group 120.png" alt="twitter" />
+        <img src="Group 121.png" alt="instagram" />
       </div>
     </div>
   )

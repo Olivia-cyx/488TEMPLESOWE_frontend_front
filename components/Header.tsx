@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 "use client"
 
 import React, { useEffect, useState } from "react"

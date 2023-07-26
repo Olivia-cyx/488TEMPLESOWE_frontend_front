@@ -104,7 +104,6 @@
   background-repeat: repeat;
   background-attachment: fixed;
   width: 100%;
-  height: 100%;
   background-blend-mode: multiply;
   opacity: 80%;
 }
@@ -150,28 +149,12 @@
   color: #dcd5c6 !important;
 }
 
-h1::before,
-h1::after {
+.footerTitleLine:before,
+.footerTitleLine:after {
   content: "";
-  display: inline-block;
-  height: 1px;
-  width: 0%; /* Default width for small screens */
+  flex: 1;
+  height: 2px;
   background: #dcd5c6;
-  margin-right: 0px;
-  vertical-align: middle;
-}
-
-@media screen and (min-width: 768px) {
-  h1:before,
-  h1:after {
-    content: "";
-    display: inline-block;
-    height: 2px;
-    width: 600px;
-    background: #dcd5c6;
-    margin-right: 10px;
-    vertical-align: middle;
-  }
 }
 
 .custom-radio {
@@ -181,14 +164,6 @@ h1::after {
 
 .custom-radio:checked {
   background-color: #dcd5c6;
-}
-
-.custom-label {
-  color: #dcd5c6;
-}
-
-.custom-placeholder::placeholder {
-  color: #dcd5c6;
 }
 
 .textBoxRsponsive {

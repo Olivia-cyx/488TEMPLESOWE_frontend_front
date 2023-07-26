@@ -1,9 +1,5 @@
 "use client"
 
-import styles from "../../styles"
-import { motion } from "framer-motion"
-import { staggerContainer } from "../../utils/motion"
-
 type ImageProps = {
   alt: string
   src: string
@@ -20,12 +16,13 @@ const Image: React.FC<ImageProps> = ({ src, alt, size }) => {
 }
 
 const GalleryPage: React.FC = () => (
-  <div className={` bg-primary-yellow overflow-hidden ${styles.height2300}`}>
-    <div className={"teamcoverPage"}>
-      <div className="mt-38 pt-20 flex justify-center items-center">
-        <img src="/Logo/488 gallery.png" alt="logo" className="w-[196px] h-[251px] object-center mb-auto" />
+  <div className=" bg-primary-yellow md:mt-20 sm:mt-12 mt-10">
+    <div className="teamcoverPage flex flex-col md:gap-10 gap-6">
+      <div className="flex justify-center">
+        <img src="/Logo/488 gallery.png" alt="logo" className="xl:w-[300px] md:w-[250px] w-[180px] object-cover" />
       </div>
-      <div className="container mx-auto px-5 py-2 lg:px-32 lg:pt-24 ">
+
+      <div className="container mx-auto px-5 pb-20 lg:px-32 lg:pb-24">
         <div className="-m-1 flex flex-wrap md:-m-2">
           <div>
             <Image src="Building front_ed.png" alt="gallery" size="full" />

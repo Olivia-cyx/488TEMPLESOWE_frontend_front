@@ -1,9 +1,6 @@
 "use client"
 import React from "react"
-import styles from "../styles"
 import { motion } from "framer-motion"
-import Navbar from "../components/Header"
-import { slideIn, textVariant } from "../utils/motion"
 
 export default function LandingPage() {
   return (
