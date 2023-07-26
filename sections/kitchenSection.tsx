@@ -15,7 +15,7 @@ import "swiper/css/navigation"
 export default function KitchenSection() {
   return (
     <>
-      <section className={`${styles.paddings} flex justify-center items-center flex-col`}>
+      <section className={`${styles.paddings} flex justify-center items-center flex-col md:gap-48 sm:gap-40 gap-28`}>
         {/* first section */}
         <div className="flex justify-center items-center xl:gap-72 gap-16 xl:flex-row flex-col">
           {/* image */}
@@ -54,17 +54,17 @@ export default function KitchenSection() {
               <img src="LOGO-bar upstairs.png" alt="LOGO_bedroom" className="xl:h-[90.85px] md:h-[80px] h-[70.85px] object-contain" />
             </motion.div>
 
-            <div className="w-[259px] flex flex-col">
-              <div className="flex flex-col items-start">
+            <div className="xl:w-[259px] lg:w-[350px] md:w-[380px] sm:w-[259px] w-[225px] flex flex-col">
+              <div className="flex xl:flex-col md:flex-row sm:flex-col flex-col items-start">
                 <TypingBrownText
                   title="Harmonize living 
                 "
-                  textStyles="xl:text-start text-center"
+                  textStyles="text-start"
                 />
                 <TypingBrownText
                   title="and productivity: 
                 "
-                  textStyles="xl:text-start text-center"
+                  textStyles="text-start"
                 />
               </div>
 
@@ -89,14 +89,14 @@ export default function KitchenSection() {
               <img src="LOGO-kitchen.png" alt="LOGO_bedroom" className="xl:h-[90.85px] md:h-[80px] h-[70.85px] object-contain" />
             </motion.div>
 
-            <div className="w-[259px] flex flex-col">
+            <div className="sm:w-[259px] w-[300px] flex flex-col">
               <div className="flex flex-col items-start">
                 <TypingBrownText
                   title="Embrace the art of
 "
-                  textStyles="xl:text-start text-center"
+                  textStyles="text-start"
                 />
-                <TypingBrownText title="effortless hospitality:" textStyles="xl:text-start text-center" />
+                <TypingBrownText title="effortless hospitality:" textStyles="text-start" />
               </div>
 
               <motion.p variants={fadeIn("up", "tween", 0.05, 0.25)} className="freightBigPro sm:text-[21px] text-[18px] text-start text-primary-yellow">
@@ -111,7 +111,7 @@ export default function KitchenSection() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
-            className={"flex justify-center items-center mt-20"}
+            className={"flex justify-center items-center"}
           >
             <motion.div variants={fadeIn("up", "tween", 0.05, 0.25)}>
               <Swiper
@@ -145,7 +145,7 @@ export default function KitchenSection() {
               <img
                 src="living_Room.png"
                 alt="bedroom"
-                className="mt-20 object-cover 2xl:w-[950px] 2xl:h-[677px] xl:w-[650px] xl:h-[455px] lg:w-[800px] lg:h-[570px] md:w-[650px] sm:w-[500px] sm:h-[350px] w-[300px] h-[210px]"
+                className="object-cover 2xl:w-[950px] 2xl:h-[677px] xl:w-[650px] xl:h-[455px] lg:w-[800px] lg:h-[570px] md:w-[650px] sm:w-[500px] sm:h-[350px] w-[300px] h-[210px]"
               />
             </motion.div>
           </motion.div>
@@ -162,10 +162,10 @@ export default function KitchenSection() {
               <img src="LOGO-living room.png" alt="LOGO_bedroom" className="xl:h-[90.85px] md:h-[80px] h-[70.85px] object-contain" />
             </motion.div>
 
-            <div className="w-[259px] flex flex-col">
+            <div className="sm:w-[259px] w-[300px] flex flex-col">
               <div className="flex flex-col items-start">
-                <TypingBrownText title="Elevate your" textStyles="xl:text-start text-center" />
-                <TypingBrownText title="living experience:" textStyles="xl:text-start text-center" />
+                <TypingBrownText title="Elevate your" textStyles="text-start" />
+                <TypingBrownText title="living experience:" textStyles="text-start" />
               </div>
 
               <motion.p variants={fadeIn("up", "tween", 0.05, 0.25)} className="freightBigPro sm:text-[21px] text-[18px] text-start text-primary-yellow">
