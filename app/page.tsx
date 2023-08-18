@@ -8,17 +8,17 @@ import Map from "../components/Map"
 
 const Page: React.FC = () => (
   <>
-    <div className={`bg-primary-yellow overflow-hidden xl:${styles.height3113}  md:${styles.height844}`}>
+    <div className="bg-primary-yellow overflow-hidden">
       <div className={"coverPage"}>
         <LandingPage />
       </div>
       <AboutPage />
       <BedroomSection />
     </div>
-    <div className={`bg-secondary-white overflow-hidden ${styles.height3256}`}>
+    <div className="bg-secondary-white overflow-hidden ">
       <KitchenSection />
     </div>
-    <div className={`bg-primary-yellow overflow-hidden ${styles.height4148}`}>
+    <div className="bg-primary-yellow overflow-hidden">
       <OutdoorSection />
       <Map />
     </div>

@@ -115,27 +115,9 @@
   font-family: "Freight Big Pro", serif;
 }
 
-/* .absolute {
-  z-index: 1;
-} */
-
 .map-container {
-  height: 70vh;
+  height: 100%;
   width: 100%;
-}
-
-@media screen and (min-width: 768px) and (max-width: 1279px) {
-  .map-container {
-    height: 50vh;
-    width: 760px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .map-container {
-    height: 100vh;
-    width: 100%;
-  }
 }
 
 .swiper-pagination-bullet-active {

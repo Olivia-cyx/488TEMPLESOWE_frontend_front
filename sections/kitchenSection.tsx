@@ -24,18 +24,18 @@ export default function KitchenSection() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
-            className={"flex justify-center items-center"}
+            className="flex justify-center items-center"
           >
             <motion.div variants={staggerContainer} initial="hidden" whileInView="show" viewport={{ once: false, amount: 0.25 }} className="relative">
               <img
                 src="bar_upstairs.png"
-                alt="bedroom"
-                className="object-cover 2xl:w-[950px] 2xl:h-[677px] xl:w-[650px] xl:h-[455px] lg:w-[800px] lg:h-[570px] md:w-[650px] md:h-[455px] sm:w-[500px] sm:h-[350px] w-[300px] h-[210px]"
+                alt="bar_upstairs"
+                className="object-cover 2xl:w-[950px] 2xl:h-[677px] xl:w-[650px] xl:h-[455px] lg:w-[800px] lg:h-[570px] md:w-[650px] md:h-[455px] sm:w-[500px] sm:h-[350px] w-full"
               />
               <div className="absolute sm:-top-14 sm:-left-14 -top-5 -left-5">
                 <img
                   src="LUXE_Design.png"
-                  alt="bedroom"
+                  alt="LUXE_Design"
                   className="2xl:w-[177px] 2xl:h-[238px] xl:w-[150px] xl:h-[200px] lg:w-[165px] lg:h-[220px] md:w-[150px] md:h-[200px] sm:w-[112.5px] sm:h-[150px] w-[60px] h-[80px] object-cover"
                 />
               </div>
@@ -51,7 +51,7 @@ export default function KitchenSection() {
             className={"flex items-center flex-col xl:gap-10 gap-7"}
           >
             <motion.div variants={planetVariants("right")}>
-              <img src="LOGO-bar upstairs.png" alt="LOGO_bedroom" className="xl:h-[90.85px] md:h-[80px] h-[70.85px] object-contain" />
+              <img src="LOGO-bar upstairs.png" alt="LOGO" className="xl:h-[90.85px] md:h-[80px] h-[70.85px] object-contain" />
             </motion.div>
 
             <div className="xl:w-[259px] lg:w-[350px] md:w-[380px] sm:w-[259px] w-[225px] flex flex-col">
@@ -86,10 +86,10 @@ export default function KitchenSection() {
             className={"flex items-center flex-col xl:gap-10 gap-7"}
           >
             <motion.div variants={planetVariants("left")}>
-              <img src="LOGO-kitchen.png" alt="LOGO_bedroom" className="xl:h-[90.85px] md:h-[80px] h-[70.85px] object-contain" />
+              <img src="LOGO-kitchen.png" alt="LOGO_kitchen" className="xl:h-[90.85px] md:h-[80px] h-[70.85px] object-contain" />
             </motion.div>
 
-            <div className="sm:w-[259px] w-[300px] flex flex-col">
+            <div className="xl:w-[259px] lg:w-[350px] md:w-[380px] sm:w-[259px] w-[225px]">
               <div className="flex flex-col items-start">
                 <TypingBrownText
                   title="Embrace the art of
@@ -118,12 +118,12 @@ export default function KitchenSection() {
                 slidesPerView={1}
                 modules={[Pagination, Navigation]}
                 pagination={{ clickable: true }}
-                className="2xl:w-[950px] 2xl:h-[677px] xl:w-[650px] xl:h-[455px] lg:w-[800px] lg:h-[570px] md:w-[650px] md:h-[455px] sm:w-[500px] sm:h-[350px] w-[300px] h-[210px]"
+                className="2xl:w-[950px] 2xl:h-[677px] xl:w-[650px] xl:h-[455px] lg:w-[800px] lg:h-[570px] md:w-[650px] md:h-[455px] sm:w-[500px] sm:h-[350px] w-[340px] h-[239px]"
                 navigation
               >
                 {kitchImageSlide.map((imageSlice, index) => (
                   <SwiperSlide key={index}>
-                    <Image src={imageSlice.url} alt="bedroom" className="SpipwerImage" fill />
+                    <Image src={imageSlice.url} alt="kitchen" className="SpipwerImage" fill />
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -139,13 +139,13 @@ export default function KitchenSection() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
-            className={"flex justify-center items-center"}
+            className="flex justify-center items-center"
           >
             <motion.div variants={fadeIn("up", "tween", 0.05, 0.25)}>
               <img
                 src="living_Room.png"
-                alt="bedroom"
-                className="object-cover 2xl:w-[950px] 2xl:h-[677px] xl:w-[650px] xl:h-[455px] lg:w-[800px] lg:h-[570px] md:w-[650px] sm:w-[500px] sm:h-[350px] w-[300px] h-[210px]"
+                alt="living_Room"
+                className="object-cover 2xl:w-[950px] 2xl:h-[677px] xl:w-[650px] xl:h-[455px] lg:w-[800px] lg:h-[570px] md:w-[650px] sm:w-[500px] sm:h-[350px] w-full"
               />
             </motion.div>
           </motion.div>
@@ -156,13 +156,13 @@ export default function KitchenSection() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
-            className={"flex items-center flex-col xl:gap-10 gap-7"}
+            className="flex items-center flex-col xl:gap-10 gap-7"
           >
             <motion.div variants={planetVariants("right")}>
-              <img src="LOGO-living room.png" alt="LOGO_bedroom" className="xl:h-[90.85px] md:h-[80px] h-[70.85px] object-contain" />
+              <img src="LOGO-living room.png" alt="LOGO_liveing_room" className="xl:h-[90.85px] md:h-[80px] h-[60px] object-contain" />
             </motion.div>
 
-            <div className="sm:w-[259px] w-[300px] flex flex-col">
+            <div className="xl:w-[259px] lg:w-[350px] md:w-[380px] sm:w-[259px] w-[225px] flex flex-col">
               <div className="flex flex-col items-start">
                 <TypingBrownText title="Elevate your" textStyles="text-start" />
                 <TypingBrownText title="living experience:" textStyles="text-start" />

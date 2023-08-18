@@ -51,16 +51,14 @@ const LifeStylePage: React.FC = () => {
           onSlideChange={handleSlideChange}
         >
           <div className="absolute md:top-[5%] top-[8%] left-[50%] max-w-[300px] min-w-[100px] z-10">
-            <img src="Titlepage logo.png" alt="bedroom" className="  object-contain ml-[-50%]" />
+            <img src="Titlepage logo.png" alt="bedroom" className="object-contain ml-[-50%]" />
           </div>
           {renderContent()}
-          {lifeStyleImageSlide.map((imageSlice, index) => {
-            return (
-              <SwiperSlide key={index}>
-                <Image src={imageSlice.url} alt="lifestyle" style={{ objectFit: "cover", opacity: "60%" }} fill />
-              </SwiperSlide>
-            )
-          })}
+          {lifeStyleImageSlide.map((imageSlice, index) => (
+            <SwiperSlide key={index}>
+              <Image src={imageSlice.url} alt="lifestyle" style={{ objectFit: "cover", opacity: "60%" }} fill />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </motion.div>
     </div>

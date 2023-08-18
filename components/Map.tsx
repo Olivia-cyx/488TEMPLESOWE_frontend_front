@@ -1,12 +1,9 @@
 "use client"
 
 import React, { useCallback, useRef, useState } from "react"
-import styles from "../styles"
-import { motion } from "framer-motion"
-import { navVariants } from "../utils/motion"
-import { GoogleMap, InfoWindow, Marker, useJsApiLoader, useLoadScript } from "@react-google-maps/api"
-import { useMemo } from "react"
+import { GoogleMap, InfoWindow, Marker, useLoadScript } from "@react-google-maps/api"
 import { mapStyles, markers } from "../constants/map"
+import styles from "../styles"
 
 type MarkerData = {
   id: number
@@ -41,57 +38,61 @@ export default function Map() {
   }
 
   return (
-    <div className="xl:flex justify-center items-center xl:mt-20 xl:ml-40 xl:pl-30 xl:pt-10 md:mt-40 pt-40 pl-5 pr-5">
-      <div className=" xl:w-[1000px] xl:h-[1000px] xl:ml-40 md:w-[360px] md:[360px] ">
-        {" "}
-        {!isLoaded ? (
-          <h1>Loading...</h1>
-        ) : (
-          <GoogleMap
-            id="map"
-            mapContainerClassName="map-container"
-            center={defaultCenter}
-            zoom={16}
-            onLoad={onMapLoad}
-            onClick={() => setIsOpen(false)}
-            options={{
-              styles: mapStyles,
-              minZoom: 15.5, // the furthest the user can zoom out
-              maxZoom: 20,
-            }}
-          >
-            {markers.map(({ address, lat, lng, icon = "http://maps.google.com/mapfiles/ms/icons/red-dot.png", iconSize = { width: 40, height: 60 } }, ind) => (
-              <Marker
-                key={ind}
-                position={{ lat, lng }}
-                icon={{
-                  url: icon,
-                  scaledSize: new window.google.maps.Size(iconSize.width, iconSize.height),
-                  origin: new window.google.maps.Point(0, 0),
-                  anchor: new window.google.maps.Point(0, 0),
-                }}
-                onClick={() => {
-                  handleMarkerClick(ind, lat, lng, address)
-                }}
-              >
-                {isOpen && infoWindowData?.id === ind && (
-                  <InfoWindow
-                    onCloseClick={() => {
-                      setIsOpen(false)
+    <div className={`${styles.paddings}`}>
+      <div className="flex lg:flex-row flex-col justify-center items-center 2xl:gap-32 xl:gap-24 lg:gap-14 md:gap-10 gap-6">
+        {/* map */}
+        <div className="xl:w-[1000px] xl:h-[1000px] lg:w-[800px] lg:h-[800px] md:w-[600px] md:h-[600px] sm:w-[550px] sm:h-[550px] w-[360px] h-[360px]">
+          {!isLoaded ? (
+            <h1>Loading...</h1>
+          ) : (
+            <GoogleMap
+              id="map"
+              mapContainerClassName="map-container"
+              center={defaultCenter}
+              zoom={16}
+              onLoad={onMapLoad}
+              onClick={() => setIsOpen(false)}
+              options={{
+                styles: mapStyles,
+                minZoom: 15.5, // the furthest the user can zoom out
+                maxZoom: 20,
+              }}
+            >
+              {markers.map(
+                ({ address, lat, lng, icon = "http://maps.google.com/mapfiles/ms/icons/red-dot.png", iconSize = { width: 40, height: 60 } }, ind) => (
+                  <Marker
+                    key={ind}
+                    position={{ lat, lng }}
+                    icon={{
+                      url: icon,
+                      scaledSize: new window.google.maps.Size(iconSize.width, iconSize.height),
+                      origin: new window.google.maps.Point(0, 0),
+                      anchor: new window.google.maps.Point(0, 0),
+                    }}
+                    onClick={() => {
+                      handleMarkerClick(ind, lat, lng, address)
                     }}
                   >
-                    <h3>{infoWindowData.address}</h3>
-                  </InfoWindow>
-                )}
-              </Marker>
-            ))}
-          </GoogleMap>
-        )}
-      </div>
-      <div className="flex-1 xl:ml-40 xl:mr-10 xl:w-[600px] xl:h-[1034px] pl-20 pt-12 xl:mb-0 md:mb-50 pb-50">
-        <div className="md:grid xl:grid-cols-1 md:grid-cols-2 gap-4 xl:text-[18px] md:text-[6px]" style={{ color: "#DCD5C6" }}>
-          <p className="md:col-span-1 xl:col-span-full">
-            <span style={{ fontWeight: "bold", textDecoration: "underline" }}>SPORTS & LEISURE </span>
+                    {isOpen && infoWindowData?.id === ind && (
+                      <InfoWindow
+                        onCloseClick={() => {
+                          setIsOpen(false)
+                        }}
+                      >
+                        <h3>{infoWindowData.address}</h3>
+                      </InfoWindow>
+                    )}
+                  </Marker>
+                )
+              )}
+            </GoogleMap>
+          )}
+        </div>
+
+        {/* text */}
+        <div className="flex lg:flex-col flex-row lg:gap-0 sm:gap-10 gap-4 text-secondary-white">
+          <div className="lg:text-base sm:text-xs text-[8px]">
+            <span className="font-bold underline">SPORTS & LEISURE </span>
             <br />
             01. Manningham Templestowe Leisure Centre <br />
             02.Westerfolds Sport Centre <br />
@@ -99,7 +100,7 @@ export default function Map() {
             04.The Aquarena Aquatic and Leisure Centre <br />
             05.Eastern Golf Club <br />
             <br />
-            <span style={{ fontWeight: "bold", textDecoration: "underline" }}>SOMETHING GREEN</span> <br />
+            <span className="font-bold underline">SOMETHING GREEN</span> <br />
             21.Westerfolds Park
             <br />
             22.Koonung Creek Reserve <br />
@@ -107,21 +108,22 @@ export default function Map() {
             24.Templestowe Reserve <br /> 25.Main Yarra Trail
             <br /> 26. Ruffey Creek Linear Park <br />
             <br />
-          </p>
-          <p className="md:col-span-1 xl:col-span-full">
-            <span style={{ fontWeight: "bold", textDecoration: "underline" }}>SHOPPING</span> <br />
+          </div>
+
+          <div className="lg:text-base sm:text-xs text-[8px]">
+            <span className="font-bold underline">SHOPPING</span> <br />
             11.Templestowe Village SC <br />
             12.The Pines Shopping Centre
             <br /> 13.Westfield Doncaster <br />
             14.Macedon Plaza
             <br />
-            <br /> <span style={{ fontWeight: "bold", textDecoration: "underline" }}>BUS ROUTE </span>
+            <br /> <span className="font-bold underline">BUS ROUTE </span>
             <br /> 309: City - Donvale <br />
             281: Templestowe - Deakin University
             <br /> 282: Templestowe Village SC, Doncaster SC
             <br /> 280: Tunstall Square SC, Doncaster <br />
             <br />
-            <span style={{ fontWeight: "bold", textDecoration: "underline" }}>QUALITY SCHOOLS </span>
+            <span className="font-bold underline">QUALITY SCHOOLS </span>
             <br />
             31.St Kevin's Primary school
             <br /> 32.Templestowe Valley Primary School <br />
@@ -130,16 +132,12 @@ export default function Map() {
             34.St Gregory The Great Primary
             <br /> 35.Templestowe College
             <br />
-            <br />{" "}
-            <span className="mb-30 pb-30" style={{ fontWeight: "bold", textDecoration: "underline" }}>
-              MEDICAL CENTRES
-            </span>{" "}
-            <br />
+            <br /> <span className="font-bold underline">MEDICAL CENTRES</span> <br />
             41.Foote Street Medical Centre
             <br /> 42.Doncaster-Templestowe Medical Centre <br />
             43.Manningham Medical Centre
             <br /> 44.Macedon Medical Centre
-          </p>
+          </div>
         </div>
       </div>
     </div>

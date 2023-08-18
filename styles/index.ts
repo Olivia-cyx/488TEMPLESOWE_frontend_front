@@ -9,7 +9,6 @@ const styles = {
   bottomPaddings: "sm:pb-16 xs:pb-8 pb-12",
   height1000: "h-[1130px]",
   height3113: "h-[4860px]",
-  // height3256: "xl:h-[2700px] lg:h-[3400px] md:h-[3000px] sm:h-[2400px] h-[1900px]",
   height3256: "h-[100%]",
   height4148: "h-[3150px]",
   height1200: "h-[1300px]",
