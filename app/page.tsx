@@ -1,6 +1,5 @@
 import LandingPage from "../sections/landingSection"
 import AboutPage from "../sections/aboutSection"
-import styles from "../styles"
 import BedroomSection from "../sections/bedroomSection"
 import KitchenSection from "../sections/kitchenSection"
 import OutdoorSection from "../sections/outdoorSection"
