@@ -8,95 +8,95 @@ import { TypingText } from "../components/Custom.Text"
 
 export default function BedroomSection() {
   return (
-    <section className={`${styles.paddings}flex justify-center items-center flex-col xl:mb-20`}>
-      <div className="xl:flex justify-center items-center relative xl:space-x-120 ">
+    <section className={`${styles.paddings} flex justify-center items-center flex-col md:gap-48 sm:gap-40 gap-28`}>
+      {/* first section */}
+      <div className="flex justify-center items-center xl:gap-72 gap-16 xl:flex-row flex-col">
+        {/* text */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
           viewport={{ once: false, amount: 0.25 }}
-          className={"xl:flex xl:pt-60 md:justify-center items-center flex-col relative  "}
+          className={"flex items-center flex-col xl:gap-10 gap-7"}
         >
-          <motion.div variants={planetVariants("left")} className={`flex-1 ${styles.flexCenter}`}>
-            <img
-              src="LOGO_bedroom - Copy.png"
-              alt="LOGO_bedroom"
-              className="xl:w-[142.5px] xl:h-[80.85px] xl:mt-0 md:w-[120.5px] h-[60.85px] mt-20 object-contain"
-            />
+          <motion.div variants={planetVariants("left")}>
+            <img src="LOGO_bedroom - Copy.png" alt="LOGO_bedroom" className="xl:h-[90.85px] md:h-[80px] h-[50px] object-contain" />
           </motion.div>
-          <div className="xl:w-[259px] xl:h-[510px] xl:pt-20 mt-0 md:pt-15 mt-15">
+
+          <div className="xl:w-[259px] lg:w-[350px] md:w-[380px] sm:w-[259px] w-full flex flex-col">
             <TypingText
               title="Indulge in private retreats: 
 "
-              textStyles="xl:text-start xl:pl-0 md:text-center pl-18 pt-10"
+              textStyles="text-start"
             />
 
-            <motion.p
-              variants={fadeIn("up", "tween", 0.05, 0.25)}
-              className="xl:mt-[8px] freightBigPro sm:text-[21px] text-[18px] xl:text-start xl:pl-0 md:text-center text-secondary-white"
-            >
+            <motion.p variants={fadeIn("up", "tween", 0.05, 0.25)} className="freightBigPro sm:text-[21px] text-[18px] text-start text-secondary-white">
               Bedrooms designed as havens of relaxation, equipped with modern conveniences for your ultimate comfort
             </motion.p>
           </div>
         </motion.div>
+
+        {/* image */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
           viewport={{ once: false, amount: 0.25 }}
-          className={"xl:flex justify-center items-center xl:pt-10 xl:pb-0 md:pt-0 pb-10"}
+          className="flex justify-center items-center"
         >
-          <motion.div variants={fadeIn("up", "tween", 0.05, 0.25)} className={`flex-1 ${styles.flexCenter}`}>
-            <img src="Bedroom image.png" alt="bedroom" className="xl:w-[950px] xl:h-[677px] xl:mt-0 md:w-[350px] md:h-[177px] mt-10 object-contain " />
+          <motion.div variants={fadeIn("up", "tween", 0.05, 0.25)}>
+            <img
+              src="Bedroom image.png"
+              alt="bedroom"
+              className="object-cover 2xl:w-[950px] 2xl:h-[677px] xl:w-[650px] xl:h-[455px] lg:w-[800px] lg:h-[570px] md:w-[650px] md:h-[455px] sm:w-[500px] sm:h-[350px] w-full"
+            />
           </motion.div>
         </motion.div>
       </div>
-      <div className="xl:flex justify-center items-center relative xl:space-x-120">
+
+      {/* second section */}
+      <div className="flex justify-center items-center xl:gap-72 gap-16 xl:flex-row flex-col-reverse">
+        {/* image */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
           viewport={{ once: false, amount: 0.25 }}
-          className={"flex justify-center items-center xl:pt-10 "}
+          className="flex justify-center items-center"
         >
-          <motion.div variants={fadeIn("up", "tween", 0.05, 0.25)} className={`flex-1 ${styles.flexCenter}`}>
+          <motion.div variants={fadeIn("up", "tween", 0.05, 0.25)}>
             <img
               src="Bathroom image.png"
               alt="bedroom"
-              className="xl:w-[950px] xl:h-[677px] xl:mt-0 xl:pt-0 md:w-[350px] md:h-[177px] mt-10 pt-10 object-contain  "
+              className="object-cover 2xl:w-[950px] 2xl:h-[677px] xl:w-[650px] xl:h-[455px] lg:w-[800px] lg:h-[570px] md:w-[650px] md:h-[455px] sm:w-[500px] sm:h-[350px] w-full"
             />
           </motion.div>
         </motion.div>
+
+        {/* text */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
           viewport={{ once: false, amount: 0.25 }}
-          className={"flex justify-center items-center flex-col xl:pt-40 md:pt-3"}
+          className="flex items-center flex-col xl:gap-10 gap-7"
         >
-          <motion.div variants={planetVariants("right")} className={`flex-1 ${styles.flexCenter}`}>
-            <img
-              src="LOGO-Bathroom - Copy.png"
-              alt="LOGO_bedroom"
-              className="xl:w-[152.5px] xl:h-[90.85px] xl:mt-0 md:w-[130.5px] h-[70.85px] mt-10 object-contain "
-            />
+          <motion.div variants={planetVariants("right")}>
+            <img src="LOGO-Bathroom - Copy.png" alt="LOGO-Bathroom" className="xl:h-[90.85px] md:h-[80px] h-[70.85px] object-contain" />
           </motion.div>
-          <div className="xl:w-[259px] xl:h-[510px] xl:pt-10 xl:mt-0 md:pt-10 md:mt-20">
+          <div className="xl:w-[259px] lg:w-[350px] md:w-[380px] sm:w-[259px] w-full flex flex-col">
             <TypingText
               title="Experience artistry 
 "
-              textStyles="xl:text-start xl:pl-0 md:text-center pl-18 mt-10"
+              textStyles="text-start"
             />
             <TypingText
               title="in wet rooms: 
 "
-              textStyles="xl:text-start xl:pl-0 md:text-center pl-18"
+              textStyles="text-start"
             />
 
-            <motion.p
-              variants={fadeIn("up", "tween", 0.05, 0.25)}
-              className="xl:mt-[8px] freightBigPro sm:text-[21px] text-[18px] xl:text-start xl:pl-0 pb-20 xl:mb-40 md:text-center md:mb-20 text-secondary-white"
-            >
+            <motion.p variants={fadeIn("up", "tween", 0.05, 0.25)} className="freightBigPro sm:text-[21px] text-[18px] text-start text-secondary-white">
               Stunning appointments, harmonious mood lighting, and spacious design create captivating spaces.
             </motion.p>
           </div>
